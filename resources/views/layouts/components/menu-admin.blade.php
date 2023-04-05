@@ -29,7 +29,8 @@
                     </g>
                 </svg>
             </span>
-            <span class="app-brand-text demo menu-text fw-bold ms-2">{{ Auth::user()->tenant_user->tenant->short_company_name }}</span>
+            <span class="app-brand-text demo menu-text fw-bold ms-2"></span>
+
         </a>
 
         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
@@ -52,7 +53,7 @@
             </a>
             <ul class="menu-sub">
                 <li class="menu-item active">
-                    <a href="{{ route('home')}}" class="menu-link">
+                    <a href="" class="menu-link">
                         <i class="menu-icon fas fa-tachometer-alt"></i>
                         <div data-i18n="Analytics">Analytics</div>
                     </a>
@@ -68,19 +69,19 @@
             </a>
             <ul class="menu-sub">
                 <li class="menu-item active">
-                    <a href="{{ route('home')}}" class="menu-link">
+                    <a href="" class="menu-link">
                         <i class="menu-icon fas fa-tachometer-alt"></i>
                         <div data-i18n="Seguimiento">Seguimiento</div>
                     </a>
                 </li>
                 <li class="menu-item active">
-                    <a href="{{ route('home')}}" class="menu-link">
+                    <a href="" class="menu-link">
                         <i class="menu-icon fas fa-tachometer-alt"></i>
                         <div data-i18n="Reportes">Reportes</div>
                     </a>
                 </li>
                 <li class="menu-item active">
-                    <a href="{{ route('home')}}" class="menu-link">
+                    <a href="" class="menu-link">
                         <i class="menu-icon fas fa-tachometer-alt"></i>
                         <div data-i18n="Ajustes">Ajustes</div>
                     </a>
@@ -96,7 +97,7 @@
             </a>
             <ul class="menu-sub">
             <li class="menu-item">
-                            <a href="{{ route('document')}}" class="menu-link">
+                            <a href="" class="menu-link">
                                 <div data-i18n="Inicio">Inicio</div>
                             </a>
                         </li>
@@ -106,7 +107,7 @@
                     </a>
                     <ul class="menu-sub">
                         <li class="menu-item">
-                            <a href="{{ route('documentList') }}" class="menu-link">
+                            <a href="" class="menu-link">
                                 <div data-i18n="Procesamiento">Procesamiento</div>
                             </a>
                         </li>

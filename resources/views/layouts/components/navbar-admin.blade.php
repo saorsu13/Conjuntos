@@ -45,10 +45,10 @@
                             <span class="visually-hidden">Toggle Dropdown</span>
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ route('indexDepartamentos')}}">Departamentos</a></li>
-                            <li><a class="dropdown-item" href="{{ route('indexCargos')}}">Cargos</a></li>
-                            <li><a class="dropdown-item" href="{{ route('indexUsuarios')}}">Usuarios</a></li>
-                            <li><a class="dropdown-item" href="{{ route('process')}}">Procesos</a></li>
+                            <li><a class="dropdown-item" href="">Departamentos</a></li>
+                            <li><a class="dropdown-item" href="">Cargos</a></li>
+                            <li><a class="dropdown-item" href="">Usuarios</a></li>
+                            <li><a class="dropdown-item" href="">Procesos</a></li>
                             <li><a class="dropdown-item" href="javascript:void(0);">Requisitos</a></li>
                             <li><a class="dropdown-item" href="javascript:void(0);">Partres Interesadas</a></li><li><a class="dropdown-item" href="javascript:void(0);">Departamentos</a></li>
                             <li><a class="dropdown-item" href="javascript:void(0);">Actividades</a></li>
@@ -250,7 +250,7 @@
                                     <div class="d-flex">
                                         <div class="flex-shrink-0 me-3">
                                             <div class="avatar">
-                                                <img src="../../assets/img/avatars/2.png" alt class="w-px-40 h-auto rounded-circle" />
+                                                <img src="{{ asset('assets/img/avatars/2.png')}}" alt class="w-px-40 h-auto rounded-circle" />
                                             </div>
                                         </div>
                                         <div class="flex-grow-1">
@@ -322,7 +322,7 @@
                                     <div class="d-flex">
                                         <div class="flex-shrink-0 me-3">
                                             <div class="avatar">
-                                                <img src="../../assets/img/avatars/5.png" alt class="w-px-40 h-auto rounded-circle" />
+                                                <img src="{{ asset('assets/img/avatars/5.png')}}" alt class="w-px-40 h-auto rounded-circle" />
                                             </div>
                                         </div>
                                         <div class="flex-grow-1">
@@ -340,7 +340,7 @@
                                     <div class="d-flex">
                                         <div class="flex-shrink-0 me-3">
                                             <div class="avatar">
-                                                <img src="../../assets/img/avatars/6.png" alt class="w-px-40 h-auto rounded-circle" />
+                                                <img src="{{ asset('assets/img/avatars/6.png')}}" alt class="w-px-40 h-auto rounded-circle" />
                                             </div>
                                         </div>
                                         <div class="flex-grow-1">
@@ -410,7 +410,7 @@
                             <div class="dropdown-divider"></div>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="{{ route('usuarios') }}">
+                            <a class="dropdown-item" href="">
                                 <i class="bx bx-user me-2"></i>
                                 <span class="align-middle">My Profile</span>
                             </a>
@@ -455,7 +455,7 @@
                             <div class="dropdown-divider"></div>
                         </li>
                         <li>
-                            <a method="POST" class="dropdown-item" href="{{ route('logout') }}">
+                            <a method="POST" class="dropdown-item" href="">
                                 @csrf
                                 <i class="bx bx-power-off me-2"></i>
                                 <span class="align-middle">Cerrar Sesion</span>
