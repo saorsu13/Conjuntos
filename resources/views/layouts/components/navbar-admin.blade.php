@@ -39,18 +39,20 @@
 
                 <!-- administration -->
                 <li class="nav-item">
-                <div class="btn-group">
-                      <button class="btn btn-secondary btn-xs ">Administracion</button>
+                    <div class="btn-group">
+                        <button class="btn btn-secondary btn-xs ">Administracion</button>
                         <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
                             <span class="visually-hidden">Toggle Dropdown</span>
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="">Departamentos</a></li>
-                            <li><a class="dropdown-item" href="">Cargos</a></li>
-                            <li><a class="dropdown-item" href="">Usuarios</a></li>
-                            <li><a class="dropdown-item" href="">Procesos</a></li>
+                            <li><a class="dropdown-item" href="{{ route('indexLocalizacion') }}">Localizaciones</a></li>
+                            <li><a class="dropdown-item" href="{{ route('indexDepartamento') }}">Departamentos</a></li>
+                            <li><a class="dropdown-item" href="{{ route('indexCargo') }}">Cargos</a></li>
+                            <li><a class="dropdown-item" href="{{ route('indexUsuario') }}">Usuarios</a></li>
+                            <li><a class="dropdown-item" href="{{ route('indexProceso') }}">Procesos</a></li>
                             <li><a class="dropdown-item" href="javascript:void(0);">Requisitos</a></li>
-                            <li><a class="dropdown-item" href="javascript:void(0);">Partres Interesadas</a></li><li><a class="dropdown-item" href="javascript:void(0);">Departamentos</a></li>
+                            <li><a class="dropdown-item" href="javascript:void(0);">Partres Interesadas</a></li>
+                            <li><a class="dropdown-item" href="javascript:void(0);">Departamentos</a></li>
                             <li><a class="dropdown-item" href="javascript:void(0);">Actividades</a></li>
                             <li><a class="dropdown-item" href="javascript:void(0);">Permisos</a></li>
                             <li>
@@ -61,7 +63,6 @@
                             <li>
                                 <hr class="dropdown-divider" />
                             </li>
-                            <li><a class="dropdown-item" href="javascript:void(0);">Localizaciones</a></li>
                             <li><a class="dropdown-item" href="javascript:void(0);">Administraciones</a></li>
                             <li><a class="dropdown-item" href="javascript:void(0);">Logo</a></li>
                         </ul>

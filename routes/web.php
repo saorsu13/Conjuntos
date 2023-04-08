@@ -18,6 +18,34 @@ use App\Http\Controllers\LoginController;
 //Ruta del Home
 Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+//Ruta de Localizaciones
+Route::get('indexLocalizacion', [App\Http\Controllers\LocalizacionController::class, 'index'])->name('indexLocalizacion');
+Route::get('crearLocalizacion',[App\Http\Controllers\LocalizacionController::class,'vistaCrearLocalizacion'])->name('crearLocalizacion');
+Route::post('agregarLocalizacion',[App\Http\Controllers\LocalizacionController::class,'agregarLocalizacion'])->name('agregarLocalizacion');
+Route::post('editarLocalizacion/{id}',[App\Http\Controllers\LocalizacionController::class,'editarLocalizacion'])->name('editarLocalizacion');
+Route::put('actualizarLocalizacion/{id}',[\App\Http\Controllers\LocalizacionController::class,'actualizarLocalizacion'])->name('actualizarLocalizacion');
+Route::delete('eliminarLocalizacion/{id}',[\App\Http\Controllers\LocalizacionController::class,'eliminarLocalizacion'])->name('eliminarLocalizacion');
+
+//Ruta de Departamentos
+Route::get('indexDepartamento',[App\Http\Controllers\DepartamentoController::class,'index'])->name('indexDepartamento');
+Route::get('crearDepartamento',[App\Http\Controllers\DepartamentoController::class,'vistaCrearDepartamento'])->name('crearDepartamento');
+Route::post('agregarDepartamento',[App\Http\Controllers\DepartamentoController::class,'agregarDepartamento'])->name('agregarDepartamento');
+
+//Rutas de Cargos
+Route::get('indexCargo',[App\Http\Controllers\CargoController::class,'index'])->name('indexCargo');
+Route::get('crearCargo',[App\Http\Controllers\CargoController::class,'vistaCrearCargo'])->name('crearCargo');
+Route::post('agregarCargo',[App\Http\Controllers\CargoController::class,'agregarCargo'])->name('agregarCargo');
+
+//Rutas de Usuarios
+Route::get('indexUsuario',[App\Http\Controllers\UsuarioController::class,'index'])->name('indexUsuario');
+Route::get('crearUsuario',[App\Http\Controllers\UsuarioController::class,'vistaCrearUsuario'])->name('crearUsuario');
+Route::post('agregarUsuario',[App\Http\Controllers\UsuarioController::class,'agregarUsuario'])->name('agregarUsuario');
+
+//Ruta de Procesos
+Route::get('indexProceso',[App\Http\Controllers\ProcesoController::class,'index'])->name('indexProceso');
+Route::get('crearProceso',[App\Http\Controllers\ProcesoController::class,'vistaCrearProceso'])->name('crearProceso');
+Route::post('agregarProceso',[App\Http\Controllers\ProcesoController::class,'agregarProceso'])->name('agregarProceso');
+
 //Rutas de Documentos
 // Route::get('document', [App\Http\Controllers\DocumentController::class, 'index'])->name('document');
 // Route::get('documentList', [App\Http\Controllers\DocumentController::class,'listDocument'])->name('documentList');
@@ -25,28 +53,10 @@ Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name(
 // Route::post('agregarDocumento',[App\Http\Controllers\DocumentController::class,'addDocument'])->name('agregarDocumento');
 // Route::get('editDocument',[App\Http\Controllers\DocumentController::class,'editarDocumento'])->name('editDocument');;
 
-//Ruta de Procesos
-// Route::get('process',[App\Http\Controllers\ProcessController::class,'index'])->name('process');
-// Route::get('create',[App\Http\Controllers\ProcessController::class,'createProcess'])->name('processCreate');
-// Route::post('agregarProceso',[App\Http\Controllers\ProcessController::class,'addProcess'])->name('agregarProceso');
 
 //Rutas de Admin
 // Route::get('usuarios', [App\Http\Controllers\UserController::class, 'index'])->name('usuarios');
 
-//Rutas de Usuarios
-// Route::get('indexUsuarios',[App\Http\Controllers\UsersController::class,'index'])->name('indexUsuarios');
-// Route::get('createUsuarios',[App\Http\Controllers\UsersController::class,'createUsers'])->name('createUsuarios');
-// Route::post('agregarUsuario',[App\Http\Controllers\UsersController::class,'addUsers'])->name('agregarUsuario');
-
-//Rutas de Cargos
-// Route::get('indexCargos',[App\Http\Controllers\PostController::class,'index'])->name('indexCargos');
-// Route::get('createCargos',[App\Http\Controllers\PostController::class,'createPost'])->name('createCargos');
-// Route::post('agregarCargo',[App\Http\Controllers\PostController::class,'addPost'])->name('agregarCargo');
-
-//Ruta de Departamentos
-// Route::get('indexDepartmentos',[App\Http\Controllers\DepartmentController::class,'index'])->name('indexDepartamentos');
-// Route::get('createDepartment',[App\Http\Controllers\DepartmentController::class,'createDepartment'])->name('createDepartment');
-// Route::post('agregarDepartamentos',[App\Http\Controllers\DepartmentController::class,'addDepartemnt'])->name('agregarDepartamentos');
 
 // Rutas inicio de sesion
 // Route::get('/',[App\Http\Controllers\SecurityController::class,'index'])->name('login');

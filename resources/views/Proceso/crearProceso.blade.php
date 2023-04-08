@@ -43,7 +43,7 @@
     <!-- Bootstrap Select -->
     <div class="col-12">
         <div class="card">
-            <h5 class="card-header">Bootstrap Select</h5>
+            <h5 class="card-header">Agregar Nuevo Proceso</h5>
             <div class="card-body">
                 <div class="row">
 
@@ -83,35 +83,35 @@
                         </select>
                         <div>
                             <label for="selectpickerBasic" class="form-label">Objetivo</label>
-                            <textarea rows="2" cols="50" class="form-control"></textarea>
+                            <textarea name="objetivo" rows="2" cols="50" class="form-control"></textarea>
                         </div>
                         <div>
                             <label for="selectpickerBasic" class="form-label">Requisito Cliente</label>
-                            <textarea rows="2" cols="50" class="form-control"></textarea>
+                            <textarea name="requisitoCliente" rows="2" cols="50" class="form-control"></textarea>
                         </div>
                         <div>
                             <label for="selectpickerBasic" class="form-label">Requisito Organización</label>
-                            <textarea rows="2" cols="50" class="form-control"></textarea>
+                            <textarea name=" requisitoOrganizacion" rows="2" cols="50" class="form-control"></textarea>
                         </div>
                         <div>
                             <label for="selectpickerBasic" class="form-label">Requisito Legal</label>
-                            <textarea rows="2" cols="50" class="form-control"></textarea>
+                            <textarea name="requisitoLegal" rows="2" cols="50" class="form-control"></textarea>
                         </div>
                         <div>
                             <label for="selectpickerBasic" class="form-label">Recursos</label>
-                            <textarea rows="2" cols="50" class="form-control"></textarea>
+                            <textarea name="recursos" rows="2" cols="50" class="form-control"></textarea>
                         </div>
                         <div>
-                            <label for="selectpickerBasic" class="form-label">Requisito Organización</label>
-                            <textarea rows="2" cols="50" class="form-control"></textarea>
+                            <label for="selectpickerBasic" class="form-label">Riesgos Cliente</label>
+                            <textarea name="riesgosCliente" rows="2" cols="50" class="form-control"></textarea>
                         </div>
                         <div>
                             <label for="selectpickerBasic" class="form-label">Riesgos a partes interesadas</label>
-                            <textarea rows="2" cols="50" class="form-control"></textarea>
+                            <textarea name="riesgosPertesInteresadas" rows="2" cols="50" class="form-control"></textarea>
                         </div>
                         <div>
                             <label for="selectpickerBasic" class="form-label">Riesgos Legal</label>
-                            <textarea rows="2" cols="50" class="form-control"></textarea>
+                            <textarea name="riesgosLegales" rows="2" cols="50" class="form-control"></textarea>
                         </div>
                         <button class="btn btn-success">Guardar</button>
                         <button class="btn btn-danger">Eliminar</button>

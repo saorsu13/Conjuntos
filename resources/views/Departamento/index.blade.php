@@ -12,16 +12,16 @@
     <div class="card">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="">Dashboard -> Cargos </a>
+                <a class="navbar-brand" href="">Dashboard -> Departamentos </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="">
-                    <a class="btn btn-primary" href="{{ route('createCargos')}}" role="button" title="Agregar Nuevo Cargo">
+                    <a class="btn btn-primary" href="{{ route('crearDepartamento')}}" role="button" title="Agregar Nuevo Cargo">
                         <i class="fas fa-puzzle-piece"></i>
                     </a>
-                    <a class="btn btn-primary" href="{{route('indexCargos')}}" role="button" title="Recargar Tabla">
+                    <a class="btn btn-primary" href="{{route('indexDepartamento')}}" role="button" title="Recargar Tabla">
                         <i class="fa fa-refresh"></i>
                     </a>
                     <a class="btn btn-primary" href="home" role="button" title="Editar Usuario">
@@ -36,7 +36,6 @@
                     <a class="btn btn-primary" href="home" role="button" title="Cerrar Editor">
                         <i class="fas fa-edit"></i>
                     </a>
-
                 </div>
             </div>
 
@@ -50,15 +49,21 @@
                 <table class="dt-column-search table table-bordered">
                     <thead>
                         <tr>
+                            <th>N°</th>
                             <th>Nombres</th>
-                            <th>Departamento</th>
-                            <th>Cargo Precedente</th>
+                            <th>Descripcion</th>
+                            <th>Localizacion</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($departamentos as $departamento)
                         <tr>
-
+                            <th>{{$departamento -> departamentos_id}}</th>
+                            <th>{{$departamento -> nombre}}</th>
+                            <th>{{$departamento -> descripcion}}</th>
+                            <th>{{$departamento -> localizaciones_dptos}}</th>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

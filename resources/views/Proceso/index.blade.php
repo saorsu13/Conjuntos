@@ -18,7 +18,7 @@
                 </button>
 
                 <div class="">
-                    <a class="btn btn-primary" href="{{ route('processCreate')}}" role="button" title="Agregar Nuevo Proceso">
+                    <a class="btn btn-primary" href="{{ route('crearProceso')}}" role="button" title="Agregar Nuevo Proceso">
                         <i class="fas fa-puzzle-piece"></i>
                     </a>
                     <a class="btn btn-primary" href="home" role="button" title="Recargar Tabla">
@@ -58,15 +58,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($procesos as $proceso)
-                        <tr>
-                            <th>{{$proceso ->code}}</th>
-                            <th>{{$proceso ->name}}</th>
-                            <th>{{$proceso ->version}}</th>
-                            <th>{{$proceso ->target}}</th>
-
-                        </tr>
-                        @endforeach
+                      
                     </tbody>
                 </table>
             </div>

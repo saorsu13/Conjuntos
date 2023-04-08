@@ -43,58 +43,25 @@
 <!-- Bootstrap Select -->
 <div class="col-12">
     <div class="card">
-        <h5 class="card-header">Agregar un Nuevo Cargo</h5>
+        <h5 class="card-header">Agregar una Nueva Localizacion</h5>
         <div class="card-body">
             <div class="row">
 
-                <form action="{{ route('agregarCargo') }}" method="POST" class="form-horizontal" role="form" id="bootstrap">
-                    <label for="selectpickerBasic" class="form-label">Departamento</label>
-                    <select name="Departamento" id="selectpickerBasic" class="selectpicker w-100" data-style="btn-default">
-                        <option>Dpto. de Gestion Integrada</option>
-                        <option>Dpto. Almacen y Suministros</option>
-                        <option>Dpto. Comercial y Ventas</option>
-                        <option>Dpto. Compras</option>
-                        <option>Dpto. Financiero y Contable</option>
-                        <option>Dpto. Gerencial</option>
-                        <option>Dpto. Operativo</option>
-                        <option>Dpto. Proyectos</option>
-                        <option>Dpto. Talento Humano</option>
-                        <option>Test Departamento</option>
-                    </select>
-                    <label for="selectpickerBasic" class="form-label">Cargo Precedente</label>
-                    <select name="cargoPrecedente" id="selectpickerBasic" class="selectpicker w-100" data-style="btn-default">
-                        <option value="1">Auditor Interno</option>
-                        <option value="2">Auxiliar Siso</option>
-                        <option value="3">Coordinador de Calidad</option>
-                        <option value="4">Coordinador(a) A</option>
-                        <option value="5">Coordinador(a) AA</option>
-                        <option value="6">Coordinador(a) AAA</option>
-                        <option value="7">Coordinador(a) SGI</option>
-                        <option value="8">Coordinador(a) SST</option>
-                        <option value="9">Gerente Regional de Calidad</option>
-                        <option value="10">profesional SST</option>
-                        <option value="11">Siso</option>
-                        <option value="12">Almacenista</option>
-                        <option value="13">Plant Superintendent</option>
-                        <option value="14">Plant Superintendent(C)</option>
-                        <option value="15">Plant Superintendent(D)</option>
-                        <option value="16">Analista de Informacion Comercial</option>
-                        <option value="17">Ejecutiva Comercial</option>
-                        <option value="18">Analista de Compras</option>
-                        <option value="19">Auxiliar de Compras</option>
-
-                    </select>
+                <form action="{{ route('actualizarLocalizacion',['id' => $localizacion->localizacion_id]) }}" method="POST" class="form-horizontal" role="form" id="bootstrap">
+                @method('PUT')
                     <div class="col-sm-6">
                         <label for="defaultFormControlInput" class="form-label">Nombre</label>
-                        <input name="nombre" type="text" class="form-control" id="defaultFormControlInput" placeholder="John Doe" aria-describedby="defaultFormControlHelp" />
+                        <input name="nombre" type="text" class="form-control" id="defaultFormControlInput" placeholder="{{$localizacion->nombre}}" aria-describedby="defaultFormControlHelp" />
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="defaultFormControlInput" class="form-label">Codigo</label>
+                        <input name="codigo" type="text" class="form-control" id="defaultFormControlInput" placeholder="{{$localizacion -> codigo}}" aria-describedby="defaultFormControlHelp" />
                     </div>
                     <div>
-                        <label for="selectpickerBasic" class="form-label">Opciones</label>
-                        <textarea name="options" rows="2" cols="50" class="form-control"></textarea>
+                        <label for="selectpickerBasic" class="form-label">Descripcion</label>
+                        <textarea name="descripcion" placeholder="{{$localizacion -> descripcion}}" rows="2" cols="50" class="form-control"></textarea>
                     </div>
-
-                    <button class="btn btn-success">Guardar</button>
-                    <button class="btn btn-danger">Eliminar</button>
+                    <button class="btn btn-success">Actualizar</button>
                 </form>
             </div>
         </div>

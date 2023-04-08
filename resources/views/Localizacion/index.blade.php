@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('page-title', 'Iso One - Home')
+@section('page-title', 'Iso One - Localizaciones')
 
 @section('page-content')
 
@@ -12,22 +12,22 @@
     <div class="card">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="">Dashboard -> Departamentos </a>
+                <a class="navbar-brand" href="">Dashboard -> Localizaciones </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="">
-                    <a class="btn btn-primary" href="{{ route('createDepartment')}}" role="button" title="Agregar Nuevo Cargo">
+                    <a class="btn btn-primary" href="{{ route('crearLocalizacion')}}" role="button" title="Agregar Nueva Localizacion">
                         <i class="fas fa-puzzle-piece"></i>
                     </a>
-                    <a class="btn btn-primary" href="{{route('indexCargos')}}" role="button" title="Recargar Tabla">
+                    <a class="btn btn-primary" href="" role="button" title="Recargar Tabla">
                         <i class="fa fa-refresh"></i>
                     </a>
-                    <a class="btn btn-primary" href="home" role="button" title="Editar Usuario">
+                    <a class="btn btn-primary" href="home" role="button" title="Editar Localizacion">
                         <i class="fas fa-cloud-download"></i>
                     </a>
-                    <a class="btn btn-primary" href="home" role="button" title="Eliminar Usuario">
+                    <a class="btn btn-primary" href="home" role="button" title="Eliminar Localizacion">
                         <i class="fas fa-edit"></i>
                     </a>
                     <a class="btn btn-primary" href="home" role="button" title="Salvar Datos">
@@ -45,20 +45,36 @@
 
         <!-- Column Search -->
         <div class="card">
-            <h5 class="card-header">Listado de Cargos</h5>
+            <h5 class="card-header">Listado de Localizaciones</h5>
             <div class="card-datatable text-nowrap">
                 <table class="dt-column-search table table-bordered">
                     <thead>
                         <tr>
+                            <th>N°</th>
+                            <th>Codigo</th>
                             <th>Nombres</th>
                             <th>Descripcion</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($departments as $department)
+                        @foreach($localizaciones as $localizacion)
                         <tr>
-                            <th>{{$department->name}}</th>
-                            <th>{{$department->description}}</th>
+                            <th>{{$localizacion->localizacion_id}}</th>
+                            <th>{{$localizacion -> codigo}}</th>
+                            <th>{{$localizacion -> nombre}}</th>
+                            <th>{{$localizacion -> descripcion}}</th>
+                            <th>
+                                <form action="{{ route('editarLocalizacion',['id' => $localizacion->localizacion_id]) }}" method="POST" class="form-horizontal" role="form" id="bootstrap">
+                                    @method('POST')
+                                    <button class="btn btn-success edit-button">Editar</button>
+                                    </form>
+                                    <br>
+                                    <form action="{{ route('eliminarLocalizacion', $localizacion->localizacion_id) }}" method="POST">
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                                    </form>
+                            </th>
                         </tr>
                         @endforeach
                     </tbody>

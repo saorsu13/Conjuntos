@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class UsersController extends Controller
+class UsuarioController extends Controller
 {
     public function index()
     {
@@ -12,9 +12,9 @@ class UsersController extends Controller
 
         return view('Usuarios.index');
     }
-    public function createUsers()
+    public function vistaCrearUsuario()
     {
-        return view('Usuarios.createUsers');
+        return view('Usuarios.crearUsuario');
     }
     // public function addUsers(Request $request)
     // {

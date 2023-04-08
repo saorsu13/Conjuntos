@@ -11,39 +11,36 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Localizacione
+ * Class Localizacion
  * 
  * @property int $localizacion_id
- * @property int $numero
  * @property string $codigo
  * @property string $nombre
+ * @property string $descripcion
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * 
- * @property Collection|PermisosLocalizacione[] $permisos_localizaciones
+ * @property Collection|PermisosLocalizacion[] $permisos_localizacion
  * @property Collection|Proceso[] $procesos
  * @property Collection|Usuario[] $usuarios
  *
  * @package App\Models
  */
-class Localizacione extends Model
+class Localizacion extends Model
 {
 	protected $table = 'localizaciones';
 	protected $primaryKey = 'localizacion_id';
 
-	protected $casts = [
-		'numero' => 'int'
-	];
 
 	protected $fillable = [
-		'numero',
 		'codigo',
-		'nombre'
+		'nombre',
+		'descripcion'
 	];
 
-	public function permisos_localizaciones()
+	public function permisos_localizacion()
 	{
-		return $this->hasMany(PermisosLocalizacione::class, 'localizacion_id');
+		return $this->hasMany(PermisosLocalizacion::class, 'localizacion_id');
 	}
 
 	public function procesos()
