@@ -13,11 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('departamentos', function (Blueprint $table) {
-            $table->unsignedInteger('departamentos_id')->default(0)->primary();
+        Schema::create('cargos', function (Blueprint $table) {
+            $table->increments('cargo_id');
+            $table->unsignedInteger('id_departamento')->index('FK_cargos_departamentos');
+            $table->text('cargo_precedente');
             $table->string('nombre');
             $table->string('descripcion');
-            $table->string('localizaciones_dptos');
+            $table->string('localizacion_dpto');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('departamentos');
+        Schema::dropIfExists('cargos');
     }
 };

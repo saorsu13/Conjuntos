@@ -31,10 +31,8 @@ class Proceso extends Model
 {
 	protected $table = 'procesos';
 	protected $primaryKey = 'proceso_id';
-	public $incrementing = false;
 
 	protected $casts = [
-		'proceso_id' => 'int',
 		'departamento_id' => 'int',
 		'localizacion_id' => 'int'
 	];

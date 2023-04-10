@@ -29,11 +29,6 @@ class Requisito extends Model
 {
 	protected $table = 'requisitos';
 	protected $primaryKey = 'requisito_id';
-	public $incrementing = false;
-
-	protected $casts = [
-		'requisito_id' => 'int'
-	];
 
 	protected $fillable = [
 		'nombre',

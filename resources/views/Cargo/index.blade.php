@@ -61,7 +61,7 @@
                         <tr>
                             <th>{{$cargo -> cargo_id}}</th>
                             <th>{{$cargo -> nombre}}</th>
-                            <th>{{$cargo -> departamento_id}}</th>
+                            <th>{{$cargo -> departamento->nombre}}</th>
                             <th>{{$cargo -> cargo_precedente}}</th>
                         </tr>
                         @endforeach

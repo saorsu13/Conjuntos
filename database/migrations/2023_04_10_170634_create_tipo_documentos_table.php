@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_documento', function (Blueprint $table) {
-            $table->unsignedInteger('tipo_documento_id')->default(0)->primary();
+        Schema::create('tipo_documentos', function (Blueprint $table) {
+            $table->increments('tipo_documento_id');
             $table->string('nombre');
             $table->string('codigo_tipo_documento');
             $table->string('categoria');
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_documento');
+        Schema::dropIfExists('tipo_documentos');
     }
 };

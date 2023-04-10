@@ -7,6 +7,7 @@
 namespace App\Models;
 
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -18,22 +19,24 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $categoria
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ * 
+ * @property Collection|Documento[] $documentos
  *
  * @package App\Models
  */
 class TipoDocumento extends Model
 {
-	protected $table = 'tipo_documento';
+	protected $table = 'tipo_documentos';
 	protected $primaryKey = 'tipo_documento_id';
-	public $incrementing = false;
-
-	protected $casts = [
-		'tipo_documento_id' => 'int'
-	];
 
 	protected $fillable = [
 		'nombre',
 		'codigo_tipo_documento',
 		'categoria'
 	];
+
+	public function documentos()
+	{
+		return $this->hasMany(Documento::class);
+	}
 }

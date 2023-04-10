@@ -26,10 +26,8 @@ class CargoResponsableRevisione extends Model
 {
 	protected $table = 'cargo_responsable_revisiones';
 	protected $primaryKey = 'cargo_responsable_revision_id';
-	public $incrementing = false;
 
 	protected $casts = [
-		'cargo_responsable_revision_id' => 'int',
 		'departamento' => 'int'
 	];
 

@@ -27,10 +27,8 @@ class PermisosLocalizacione extends Model
 {
 	protected $table = 'permisos_localizaciones';
 	protected $primaryKey = 'permisos_localizaciones_id';
-	public $incrementing = false;
 
 	protected $casts = [
-		'permisos_localizaciones_id' => 'int',
 		'usuario_id' => 'int',
 		'localizacion_id' => 'int'
 	];

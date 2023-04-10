@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('localizaciones', function (Blueprint $table) {
-            $table->increments('localizacion_id');
-            $table->integer('numero')->default(0);
-            $table->string('codigo');
+        Schema::create('requisitos', function (Blueprint $table) {
+            $table->increments('requisito_id');
             $table->string('nombre');
+            $table->string('codigo');
+            $table->string('descripcion');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('localizaciones');
+        Schema::dropIfExists('requisitos');
     }
 };

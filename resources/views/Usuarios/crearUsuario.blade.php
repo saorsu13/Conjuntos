@@ -48,8 +48,9 @@
             <div class="row">
 
                 <form action="{{ route('agregarUsuario') }}" method="POST" class="form-horizontal" role="form" id="bootstrap">
+
                     <div class="form-check col-sm-6">
-                        <input name="activo" class="form-check-input" type="checkbox" value="1" id="defaultCheck1">
+                        <input name="activo" class="form-check-input" type="checkbox" id="defaultCheck1">
                         <label class="form-check-label" for="defaultCheck1">
                             Activo
                         </label>
@@ -59,10 +60,6 @@
                         <input name="nombre" type="text" class="form-control" id="defaultFormControlInput" placeholder="John Doe" aria-describedby="defaultFormControlHelp" />
                     </div>
                     <div class="col-sm-6">
-                        <label for="defaultFormControlInput" class="form-label">Nombre Usuario</label>
-                        <input name="nombreUsuario" type="text" class="form-control" id="defaultFormControlInput" placeholder="John Doe" aria-describedby="defaultFormControlHelp" />
-                    </div>
-                    <div class="col-sm-6">
                         <label for="defaultFormControlInput" class="form-label">Correo Electronico</label>
                         <input name="correoElectronico" type="text" class="form-control" id="defaultFormControlInput" placeholder="John Doe" aria-describedby="defaultFormControlHelp" />
                     </div>
@@ -70,18 +67,16 @@
                         <label for="defaultFormControlInput" class="form-label">Contraseña</label>
                         <input name="contraseña" type="text" class="form-control" id="defaultFormControlInput" placeholder="John Doe" aria-describedby="defaultFormControlHelp" />
                     </div>
-                    <div>
-                            <label for="selectpickerBasic" class="form-label">Opciones</label>
-                            <textarea name="options" rows="2" cols="50" class="form-control"></textarea>
-                    </div>
-
+                    <div class="col-sm-6">
                     <label for="selectpickerBasic" class="form-label">Rol</label>
                     <select name="rol" id="selectpickerBasic" class="selectpicker w-100" data-style="btn-default">
-                        <option >Usuario</option>
-                        <option >Invitado</option>
-                        <option >Administrador</option>
-                        <option >Webmaster</option>
+                        <option>Usuario</option>
+                        <option>Invitado</option>
+                        <option>Administrador</option>
+                        <option>Webmaster</option>
                     </select>
+                    </div>
+                    <div class="col-sm-6">
                     <label for="selectpickerBasic" class="form-label">Cargo</label>
                     <select name="cargo" id="selectpickerBasic" class="selectpicker w-100" data-style="btn-default">
                         <option value="1">Auditor Interno</option>
@@ -103,8 +98,12 @@
                         <option value="17">Ejecutiva Comercial</option>
                         <option value="18">Analista de Compras</option>
                         <option value="19">Auxiliar de Compras</option>
-
                     </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="defaultFormControlInput" class="form-label">Localizacion Usuario</label>
+                        <input name="localizacionUsuario" type="text" class="form-control" id="defaultFormControlInput" placeholder="John Doe" aria-describedby="defaultFormControlHelp" />
+                    </div>
 
                     <button class="btn btn-success">Guardar</button>
                     <button class="btn btn-danger">Eliminar</button>

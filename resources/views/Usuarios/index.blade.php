@@ -18,10 +18,10 @@
                 </button>
 
                 <div class="">
-                    <a class="btn btn-primary" href="{{ route('createUsuarios')}}" role="button" title="Agregar Nuevo Usuario">
+                    <a class="btn btn-primary" href="{{ route('crearUsuario')}}" role="button" title="Agregar Nuevo Usuario">
                         <i class="fas fa-puzzle-piece"></i>  
                     </a>
-                    <a class="btn btn-primary" href="{{route('indexUsuarios')}}" role="button" title="Recargar Tabla">
+                    <a class="btn btn-primary" href="{{route('indexUsuario')}}" role="button" title="Recargar Tabla">
                         <i class="fa fa-refresh"></i>
                     </a>
                     <a class="btn btn-primary" href="home" role="button" title="Editar Usuario">
@@ -50,17 +50,21 @@
                 <table class="dt-column-search table table-bordered">
                     <thead>
                         <tr>
-                            <th>N°</th>
+                            <th>Estado</th>
                             <th>Nombre</th>
                             <th>Correo Electronico</th>
                             <th>Cargo</th>
                             <th>Localizacion</th>
-                            <th>Rol</th>
-                            <th>Estado</th>
+                            <!-- <th>Rol</th>
+                            <th>Estado</th> -->
                         </tr>
                     </thead>
                     <tbody>
-                   
+                        @foreach($usuarios as $usuario)
+                        <tr>
+                            <th>{{$usuario -> estado}}</th>
+                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

@@ -13,9 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
-            $table->unsignedInteger('rol_id')->default(0)->primary();
-            $table->string('tipo');
+        Schema::create('departamentos', function (Blueprint $table) {
+            $table->increments('departamentos_id');
+            $table->string('nombre');
+            $table->string('descripcion');
+            $table->string('localizaciones_dptos')->default('');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('departamentos');
     }
 };

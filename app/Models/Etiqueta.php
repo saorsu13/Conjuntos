@@ -24,11 +24,6 @@ class Etiqueta extends Model
 {
 	protected $table = 'etiquetas';
 	protected $primaryKey = 'etiqueta_id';
-	public $incrementing = false;
-
-	protected $casts = [
-		'etiqueta_id' => 'int'
-	];
 
 	protected $fillable = [
 		'grupo',

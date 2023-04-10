@@ -14,12 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('documentos', function (Blueprint $table) {
-            $table->unsignedInteger('documento_id')->default(0)->primary();
-            $table->unsignedInteger('requisito_id')->default(0)->index('documentos_requisitos_foreign');
-            $table->unsignedInteger('departamento_id')->default(0)->index('documentos_departamentos_foreign');
-            $table->unsignedInteger('proceso_id')->default(0)->index('documentos_procesos_foreign');
-            $table->unsignedInteger('tipo_documento_id')->default(0);
-            $table->unsignedInteger('localizacion_id')->default(0);
+            $table->increments('documento_id');
+            $table->unsignedInteger('requisito_id')->index('documentos_requisitos_foreign');
+            $table->unsignedInteger('departamento_id')->index('documentos_departamentos_foreign');
+            $table->unsignedInteger('proceso_id')->index('documentos_procesos_foreign');
+            $table->unsignedInteger('tipo_documento_id')->index('FK_documentos_tipo_documentos');
+            $table->unsignedInteger('localizacion_id')->index('FK_documentos_localizaciones');
             $table->string('codigo');
             $table->string('nombre');
             $table->string('version');

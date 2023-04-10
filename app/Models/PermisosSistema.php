@@ -27,10 +27,8 @@ class PermisosSistema extends Model
 {
 	protected $table = 'permisos_sistemas';
 	protected $primaryKey = 'permiso_sistema_id';
-	public $incrementing = false;
 
 	protected $casts = [
-		'permiso_sistema_id' => 'int',
 		'usuario_id' => 'int',
 		'requisito_id' => 'int'
 	];

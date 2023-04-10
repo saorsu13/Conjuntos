@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('cargo_responsable_revisiones', function (Blueprint $table) {
-            $table->unsignedInteger('cargo_responsable_revision_id')->default(0)->primary();
-            $table->integer('departamento')->default(0);
-            $table->string('cargo_edita_id', 50)->default('0');
+            $table->increments('cargo_responsable_revision_id');
+            $table->integer('departamento');
+            $table->string('cargo_edita_id', 50);
             $table->string('cargo_revisa_id');
             $table->string('cargo_aprueba_id');
             $table->timestamps();

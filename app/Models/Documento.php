@@ -29,8 +29,10 @@ use Illuminate\Database\Eloquent\Model;
  * @property Carbon|null $updated_at
  * 
  * @property Departamento $departamento
+ * @property Localizacione $localizacione
  * @property Proceso $proceso
  * @property Requisito $requisito
+ * @property TipoDocumento $tipo_documento
  *
  * @package App\Models
  */
@@ -38,10 +40,8 @@ class Documento extends Model
 {
 	protected $table = 'documentos';
 	protected $primaryKey = 'documento_id';
-	public $incrementing = false;
 
 	protected $casts = [
-		'documento_id' => 'int',
 		'requisito_id' => 'int',
 		'departamento_id' => 'int',
 		'proceso_id' => 'int',
@@ -69,6 +69,11 @@ class Documento extends Model
 		return $this->belongsTo(Departamento::class);
 	}
 
+	public function localizacione()
+	{
+		return $this->belongsTo(Localizacione::class, 'localizacion_id');
+	}
+
 	public function proceso()
 	{
 		return $this->belongsTo(Proceso::class);
@@ -77,5 +82,10 @@ class Documento extends Model
 	public function requisito()
 	{
 		return $this->belongsTo(Requisito::class);
+	}
+
+	public function tipo_documento()
+	{
+		return $this->belongsTo(TipoDocumento::class);
 	}
 }

@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('permisos_sistemas', function (Blueprint $table) {
-            $table->unsignedInteger('permiso_sistema_id')->default(0)->primary();
-            $table->unsignedInteger('usuario_id')->default(0)->index('permisos_sistemas_usuario_id_foreign');
-            $table->unsignedInteger('requisito_id')->default(0)->index('permisos_sistemas_requisito_id_foreign');
+        Schema::create('procesos', function (Blueprint $table) {
+            $table->increments('proceso_id');
+            $table->string('codigo');
+            $table->string('nombre');
+            $table->unsignedInteger('departamento_id')->index('procesos_departamento_id_foreign');
+            $table->unsignedInteger('localizacion_id')->index('procesos_localizacion_proceso_id_foreign');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('permisos_sistemas');
+        Schema::dropIfExists('procesos');
     }
 };

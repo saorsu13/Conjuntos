@@ -23,11 +23,6 @@ class Role extends Model
 {
 	protected $table = 'roles';
 	protected $primaryKey = 'rol_id';
-	public $incrementing = false;
-
-	protected $casts = [
-		'rol_id' => 'int'
-	];
 
 	protected $fillable = [
 		'tipo'

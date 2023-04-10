@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('procesos', function (Blueprint $table) {
-            $table->unsignedInteger('proceso_id')->default(0)->primary();
+        Schema::create('localizaciones', function (Blueprint $table) {
+            $table->increments('localizacion_id');
             $table->string('codigo');
             $table->string('nombre');
-            $table->unsignedInteger('departamento_id')->index('procesos_departamento_id_foreign');
-            $table->unsignedInteger('localizacion_id')->default(0)->index('procesos_localizacion_proceso_id_foreign');
+            $table->string('descripcion')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('procesos');
+        Schema::dropIfExists('localizaciones');
     }
 };

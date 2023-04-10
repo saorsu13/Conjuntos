@@ -20,6 +20,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $localizacion_dpto
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ * 
+ * @property Departamento $departamento
  *
  * @package App\Models
  */
@@ -27,10 +29,8 @@ class Cargo extends Model
 {
 	protected $table = 'cargos';
 	protected $primaryKey = 'cargo_id';
-	public $incrementing = false;
 
 	protected $casts = [
-		'cargo_id' => 'int',
 		'id_departamento' => 'int'
 	];
 
@@ -41,4 +41,9 @@ class Cargo extends Model
 		'descripcion',
 		'localizacion_dpto'
 	];
+
+	public function departamento()
+	{
+		return $this->belongsTo(Departamento::class, 'id_departamento');
+	}
 }

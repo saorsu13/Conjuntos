@@ -20,6 +20,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * 
+ * @property Collection|Cargo[] $cargos
  * @property Collection|Documento[] $documentos
  * @property Collection|Proceso[] $procesos
  *
@@ -29,17 +30,17 @@ class Departamento extends Model
 {
 	protected $table = 'departamentos';
 	protected $primaryKey = 'departamentos_id';
-	public $incrementing = false;
-
-	protected $casts = [
-		'departamentos_id' => 'int'
-	];
 
 	protected $fillable = [
 		'nombre',
 		'descripcion',
 		'localizaciones_dptos'
 	];
+
+	public function cargos()
+	{
+		return $this->hasMany(Cargo::class, 'id_departamento');
+	}
 
 	public function documentos()
 	{

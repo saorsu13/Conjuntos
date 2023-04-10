@@ -13,11 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('etiquetas', function (Blueprint $table) {
-            $table->unsignedInteger('etiqueta_id')->default(0)->primary();
-            $table->string('grupo');
-            $table->string('nombre');
-            $table->timestamps();
+        Schema::table('cargos', function (Blueprint $table) {
+            $table->foreign(['id_departamento'], 'FK_cargos_departamentos')->references(['departamentos_id'])->on('departamentos')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
     }
 
@@ -28,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('etiquetas');
+        Schema::table('cargos', function (Blueprint $table) {
+            $table->dropForeign('FK_cargos_departamentos');
+        });
     }
 };
