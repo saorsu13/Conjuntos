@@ -30,11 +30,17 @@ Route::delete('eliminarLocalizacion/{id}',[\App\Http\Controllers\LocalizacionCon
 Route::get('indexDepartamento',[App\Http\Controllers\DepartamentoController::class,'index'])->name('indexDepartamento');
 Route::get('crearDepartamento',[App\Http\Controllers\DepartamentoController::class,'vistaCrearDepartamento'])->name('crearDepartamento');
 Route::post('agregarDepartamento',[App\Http\Controllers\DepartamentoController::class,'agregarDepartamento'])->name('agregarDepartamento');
+Route::post('editarDepartamento/{id}',[App\Http\Controllers\DepartamentoController::class,'editarDepartamento'])->name('editarDepartamento'); 
+Route::put('actualizarDepartamento{id}',[App\Http\Controllers\DepartamentoController::class,'actualizarDepartamento'])->name('actualizarDepartamento');
+Route::delete('eliminarDepartamento/{id}',[\App\Http\Controllers\DepartamentoController::class,'eliminarDepartamento'])->name('eliminarDepartamento');
 
 //Rutas de Cargos
 Route::get('indexCargo',[App\Http\Controllers\CargoController::class,'index'])->name('indexCargo');
 Route::get('crearCargo',[App\Http\Controllers\CargoController::class,'vistaCrearCargo'])->name('crearCargo');
 Route::post('agregarCargo',[App\Http\Controllers\CargoController::class,'agregarCargo'])->name('agregarCargo');
+Route::post('editarCargo',[App\Http\Controllers\CargoController::class,'editarCargo'])->name('editarCargo');
+Route::put('actualizarCargo',[App\Http\Controllers\CargoController::class,'actualizarCargo'])->name('actualizarCargo');
+Route::delete('eliminarCargo',[App\Http\Controllers\CargoController::class,'eliminarCargo'])->name('eliminarCargo');
 
 //Rutas de Usuarios
 Route::get('indexUsuario',[App\Http\Controllers\UsuarioController::class,'index'])->name('indexUsuario');

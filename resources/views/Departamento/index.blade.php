@@ -53,6 +53,7 @@
                             <th>Nombres</th>
                             <th>Descripcion</th>
                             <th>Localizacion</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -62,6 +63,17 @@
                             <th>{{$departamento -> nombre}}</th>
                             <th>{{$departamento -> descripcion}}</th>
                             <th>{{$departamento -> localizaciones_dptos}}</th>
+                            <th>
+                            <form action="{{ route('editarDepartamento',['id' => $departamento->departamentos_id]) }}" method="POST" class="form-horizontal" role="form" id="bootstrap">
+                                    @method('POST')
+                                    <button class="btn btn-success edit-button">Editar</button>
+                                    </form>
+                                    <br>
+                                    <form action="{{ route('eliminarDepartamento', $departamento->departamentos_id) }}" method="POST">
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                                    </form>
+                            </th>
                         </tr>
                         @endforeach
                     </tbody>

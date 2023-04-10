@@ -43,53 +43,30 @@
 <!-- Bootstrap Select -->
 <div class="col-12">
     <div class="card">
-        <h5 class="card-header">Agregar un Nuevo Cargo</h5>
+        <h5 class="card-header">Editar el Departamento</h5>
         <div class="card-body">
             <div class="row">
 
-                <form action="{{ route('agregarCargo') }}" method="POST" class="form-horizontal" role="form" id="bootstrap">
+                <form action="{{ route('actualizarDepartamento',['id' => $departamentos->departamentos_id]) }}" method="POST" class="form-horizontal" role="form" id="bootstrap">
 
-                    <label for="selectpickerBasic" class="form-label">Departamento</label>
-
-                    <select name="id_departamento" id="selectpickerBasic" class="selectpicker w-100" data-style="btn-default">
-                        @foreach($departamentos as $departamento)
-                        <option value="{{$departamento -> departamentos_id}}">{{$departamento -> nombre}}</option>
-                        @endforeach
-                    </select>
-                    <label for="selectpickerBasic" class="form-label">Cargo Precedente</label>
-                    <select name="cargoPrecedente" id="selectpickerBasic" class="selectpicker w-100" data-style="btn-default">
-                        <option >Auditor Interno</option>
-                        <option >Auxiliar Siso</option>
-                        <option >Coordinador de Calidad</option>
-                        <option >Coordinador(a) A</option>
-                        <option >Coordinador(a) AA</option>
-                        <option >Coordinador(a) AAA</option>
-                        <option >Coordinador(a) SGI</option>
-                        <option >Coordinador(a) SST</option>
-                        <option >Gerente Regional de Calidad</option>
-                        <option >profesional SST</option>
-                        <option >Siso</option>
-                        <option >Almacenista</option>
-                        <option >Plant Superintendent</option>
-                        <option >Plant Superintendent(C)</option>
-                        <option >Plant Superintendent(D)</option>
-                        <option >Analista de Informacion Comercial</option>
-                        <option >Ejecutiva Comercial</option>
-                        <option >Analista de Compras</option>
-                        <option >Auxiliar de Compras</option>
-
-                    </select>
                     <div class="col-sm-6">
                         <label for="defaultFormControlInput" class="form-label">Nombre</label>
-                        <input name="nombre" type="text" class="form-control" id="defaultFormControlInput" placeholder="John Doe" aria-describedby="defaultFormControlHelp" />
+                        <input name="nombre" type="text" class="form-control" id="defaultFormControlInput" placeholder="{{$departamentos -> nombre}}" aria-describedby="defaultFormControlHelp" />
                     </div>
-                    <div>
+                    <div class="col-sm-6">
                         <label for="selectpickerBasic" class="form-label">Descripcion</label>
-                        <textarea name="descripcion" rows="2" cols="50" class="form-control"></textarea>
+                        <textarea name="descripcion" placeholder="{{$departamentos -> descripcion}}" rows="2" cols="50" class="form-control"></textarea>
                     </div>
-
-                    <button class="btn btn-success">Guardar</button>
-                    <button class="btn btn-danger">Eliminar</button>
+                    <div class="col-md-6 mb-4">
+                        <label for="selectpickerMultiple" class="form-label">Listado de Localizaciones</label>
+                        <select name="localizaciones_dptos[]" multiple id="selectpickerMultiple" class="selectpicker w-100" data-style="btn-default" multiple data-icon-base="bx" data-tick-icon="bx-check text-primary">
+                            @foreach($localizaciones as $localizacion)
+                            <option>{{$localizacion -> nombre}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <button class="btn btn-success">Actualizar</button>
+                    <button class="btn btn-danger">Cancelar</button>
                 </form>
             </div>
         </div>

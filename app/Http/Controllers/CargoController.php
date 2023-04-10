@@ -24,10 +24,10 @@ class CargoController extends Controller
         $cargo = new Cargo();
         
         $cargo->cargo_precedente = $request->cargoPrecedente;
-        $cargo ->id_departamento=$departamentos->id_departamento;
+        $cargo ->id_departamento=$request->id_departamento;
         $cargo->nombre = $request->nombre;
         $cargo->descripcion = $request->descripcion;
-        $cargo->localizacion_dpto = $request->departamento;
+        $cargo->localizacion_dpto = $request='medellin';
 
         $cargo->save();
         return redirect()->route('indexCargo');
