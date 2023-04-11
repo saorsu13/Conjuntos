@@ -51,7 +51,7 @@
 
                     <div class="col-sm-6">
                         <label for="defaultFormControlInput" class="form-label">Nombre</label>
-                        <input name="nombre" type="text" class="form-control" id="defaultFormControlInput" placeholder="John Doe" aria-describedby="defaultFormControlHelp" />
+                        <input name="nombre" type="text" class="form-control" id="defaultFormControlInput" placeholder="" aria-describedby="defaultFormControlHelp" />
                     </div>
                     <div>
                         <label for="selectpickerBasic" class="form-label">Descripcion</label>
@@ -59,8 +59,8 @@
                     </div>
                     <div class="col-md-6 mb-4">
                         <label for="selectpickerMultiple" class="form-label">Listado de Localizaciones</label>
-                        <select name="localizaciones_dptos[]" multiple id="selectpickerMultiple" class="selectpicker w-100" data-style="btn-default" multiple data-icon-base="bx" data-tick-icon="bx-check text-primary">
-                            @foreach($localizaciones as $localizacion)
+                        <select name="Localizaciones_dptos[]" multiple id="selectpickerMultiple" class="selectpicker w-100" data-style="btn-default" multiple data-icon-base="bx" data-tick-icon="bx-check text-primary">
+                            @foreach($Localizaciones as $localizacion)
                             <option>{{$localizacion -> nombre}}</option>
                             @endforeach
                         </select>

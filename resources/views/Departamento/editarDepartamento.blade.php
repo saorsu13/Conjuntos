@@ -48,7 +48,7 @@
             <div class="row">
 
                 <form action="{{ route('actualizarDepartamento',['id' => $departamentos->departamentos_id]) }}" method="POST" class="form-horizontal" role="form" id="bootstrap">
-
+                @method('PUT')
                     <div class="col-sm-6">
                         <label for="defaultFormControlInput" class="form-label">Nombre</label>
                         <input name="nombre" type="text" class="form-control" id="defaultFormControlInput" placeholder="{{$departamentos -> nombre}}" aria-describedby="defaultFormControlHelp" />
@@ -59,8 +59,8 @@
                     </div>
                     <div class="col-md-6 mb-4">
                         <label for="selectpickerMultiple" class="form-label">Listado de Localizaciones</label>
-                        <select name="localizaciones_dptos[]" multiple id="selectpickerMultiple" class="selectpicker w-100" data-style="btn-default" multiple data-icon-base="bx" data-tick-icon="bx-check text-primary">
-                            @foreach($localizaciones as $localizacion)
+                        <select name="Localizaciones_dptos[]" multiple id="selectpickerMultiple" class="selectpicker w-100" data-style="btn-default" multiple data-icon-base="bx" data-tick-icon="bx-check text-primary">
+                            @foreach($Localizaciones as $localizacion)
                             <option>{{$localizacion -> nombre}}</option>
                             @endforeach
                         </select>

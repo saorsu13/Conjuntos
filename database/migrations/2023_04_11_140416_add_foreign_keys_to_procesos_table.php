@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('procesos', function (Blueprint $table) {
             $table->foreign(['departamento_id'], 'FK_procesos_departamentos')->references(['departamentos_id'])->on('departamentos')->onUpdate('CASCADE')->onDelete('CASCADE');
-            $table->foreign(['localizacion_id'], 'FK_procesos_Localizaciones')->references(['localizacion_id'])->on('Localizaciones')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->foreign(['localizacion_id'], 'FK_procesos_localizaciones')->references(['localizacion_id'])->on('localizaciones')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
     }
 
@@ -28,7 +28,7 @@ return new class extends Migration
     {
         Schema::table('procesos', function (Blueprint $table) {
             $table->dropForeign('FK_procesos_departamentos');
-            $table->dropForeign('FK_procesos_Localizaciones');
+            $table->dropForeign('FK_procesos_localizaciones');
         });
     }
 };

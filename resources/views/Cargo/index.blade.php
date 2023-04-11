@@ -54,6 +54,7 @@
                             <th>Nombres</th>
                             <th>Departamento</th>
                             <th>Cargo Precedente</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -61,8 +62,19 @@
                         <tr>
                             <th>{{$cargo -> cargo_id}}</th>
                             <th>{{$cargo -> nombre}}</th>
-                            <th>{{$cargo -> departamento->nombre}}</th>
+                            <th>{{$cargo -> departamento-> nombre}}</th>
                             <th>{{$cargo -> cargo_precedente}}</th>
+                            <th>
+                            <form action="{{ route('editarCargo',['id' => $cargo->cargo_id]) }}" method="POST" class="form-horizontal" role="form" id="bootstrap">
+                                    @method('POST')
+                                    <button class="btn btn-success edit-button">Editar</button>
+                                    </form>
+                                    <br>
+                                    <form action="{{ route('eliminarCargo', $cargo->cargo_id) }}" method="POST">
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                                    </form>
+                            </th>
                         </tr>
                         @endforeach
                     </tbody>

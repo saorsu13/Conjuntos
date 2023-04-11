@@ -15,21 +15,21 @@ class DepartamentoController extends Controller
     }
     public function vistaCrearDepartamento()
     {
-        $localizaciones = Localizacion::all();
-        return view('Departamento.crearDepartamento', compact('localizaciones'));
+        $Localizaciones = Localizacion::all();
+        return view('Departamento.crearDepartamento', compact('Localizaciones'));
     }
     public function agregarDepartamento(Request $request)
     {
         $departamento = new Departamento();
         $departamento->nombre = $request->nombre;
         $departamento->descripcion = $request->descripcion;
-        if ($request->has('localizaciones_dptos')) 
+        if ($request->has('Localizaciones_dptos')) 
         {
-            $localizacionesSeleccionadas = $request->input('localizaciones_dptos');
+            $LocalizacionesSeleccionadas = $request->input('Localizaciones_dptos');
         }
-        $localizacionesSeleccionadasString = implode(',', $localizacionesSeleccionadas);
+        $LocalizacionesSeleccionadasString = implode(',', $LocalizacionesSeleccionadas);
 
-        $departamento->localizaciones_dptos = $localizacionesSeleccionadasString;
+        $departamento->Localizaciones_dptos = $LocalizacionesSeleccionadasString;
 
         $departamento->save();
         return redirect()->route('indexDepartamento');
@@ -37,8 +37,8 @@ class DepartamentoController extends Controller
     public function editarDepartamento($id)
     {
         $departamentos = Departamento::find($id);
-        $localizaciones = Localizacion::all();
-        return view('Departamento.editarDepartamento', compact('departamentos','localizaciones'));
+        $Localizaciones = Localizacion::all();
+        return view('Departamento.editarDepartamento', compact('departamentos','Localizaciones'));
     }
     public function actualizarDepartamento(Request $request, $id)
     {
@@ -46,13 +46,13 @@ class DepartamentoController extends Controller
         $departamento->nombre = $request->nombre;
         $departamento->descripcion = $request->descripcion;
 
-        if ($request->has('localizaciones_dptos')) 
+        if ($request->has('Localizaciones_dptos')) 
         {
-            $localizacionesSeleccionadas = $request->input('localizaciones_dptos');
+            $LocalizacionesSeleccionadas = $request->input('Localizaciones_dptos');
         }
-        $localizacionesSeleccionadasString = implode(',', $localizacionesSeleccionadas);
+        $LocalizacionesSeleccionadasString = implode(',', $LocalizacionesSeleccionadas);
 
-        $departamento->localizaciones_dptos = $localizacionesSeleccionadasString;
+        $departamento->Localizaciones_dptos = $LocalizacionesSeleccionadasString;
 
         $departamento->save();
         return redirect()->route('indexDepartamento');

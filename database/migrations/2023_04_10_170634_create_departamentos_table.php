@@ -17,7 +17,7 @@ return new class extends Migration
             $table->increments('departamentos_id');
             $table->string('nombre');
             $table->string('descripcion');
-            $table->string('localizaciones_dptos')->default('');
+            $table->string('Localizaciones_dptos')->default('');
             $table->timestamps();
         });
     }

@@ -50,19 +50,35 @@
                 <table class="dt-column-search table table-bordered">
                     <thead>
                         <tr>
-                            <th>Estado</th>
+                            <!-- <th>Estado</th> -->
                             <th>Nombre</th>
                             <th>Correo Electronico</th>
                             <th>Cargo</th>
                             <th>Localizacion</th>
-                            <!-- <th>Rol</th>
-                            <th>Estado</th> -->
+                            <th>Acciones</th>
+
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($usuarios as $usuario)
                         <tr>
-                            <th>{{$usuario -> estado}}</th>
+                            <!-- <th>{{$usuario -> activo}}</th> -->
+                            <th>{{$usuario -> nombre}}</th>
+                            <th>{{$usuario -> correo_electronico}}</th>
+                            <th>{{$usuario -> cargo}}</th>
+                            <th>{{$usuario -> localizacion_usuario}}</th>
+                            <th>
+                            <form action="{{ route('editarUsuario',['id' => $usuario->usuario_id]) }}" method="POST" class="form-horizontal" role="form" id="bootstrap">
+                                    @method('POST')
+                                    <button class="btn btn-success edit-button">Editar</button>
+                                    </form>
+                                    <br>
+                                    <form action="{{ route('eliminarUsuario', $usuario->usuario_id) }}" method="POST">
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                                    </form>
+                            </th>
+
                         </tr>
                         @endforeach
                     </tbody>

@@ -91,13 +91,13 @@
 
         <!-- Documents -->
         <li class="menu-item">
-            <a href="" class="menu-link menu-toggle">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon fas fa-file-alt"></i>
                 <div data-i18n="Documentos">Documentos</div>
             </a>
             <ul class="menu-sub">
             <li class="menu-item">
-                            <a href="" class="menu-link">
+                            <a href="{{ route('indexDocumento')}}" class="menu-link">
                                 <div data-i18n="Inicio">Inicio</div>
                             </a>
                         </li>
@@ -107,7 +107,7 @@
                     </a>
                     <ul class="menu-sub">
                         <li class="menu-item">
-                            <a href="" class="menu-link">
+                            <a href="{{ route('crearDocumento')}}" class="menu-link">
                                 <div data-i18n="Procesamiento">Procesamiento</div>
                             </a>
                         </li>

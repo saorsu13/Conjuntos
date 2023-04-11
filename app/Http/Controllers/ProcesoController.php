@@ -18,24 +18,36 @@ class ProcesoController extends Controller
     }
     public function agregarProceso(Request $request)
     {
-        $process = new Proceso();
-        $process -> code = $request ->codigo;
-        $process -> name = $request ->codigo;
-        $process -> version = $request ->codigo;
-        $process -> target = $request=1;
-        $process -> requirement_client = $request=1;
-        $process -> requirement_company = $request=1;
-        $process -> requirement_legal = $request=1;
-        $process -> sources = $request=1;
-        $process -> risk_client = $request=1;
-        $process -> risk_company = $request=1;
-        $process -> risk_legal = $request=1;
-        $process -> position_id = $request =1;
+        $proceso = new Proceso();
+        $proceso -> codigo = $request ->codigo;
+        $proceso -> nombre = $request ->codigo;
 
+        $proceso ->save();
 
-        $process ->save();
+        return redirect()->route('proceso');
 
-        return redirect()->route('process');
+    }
+    public function editarProceso($id)
+    {
+        $proceso = Proceso::find($id);
+        return view('Proceso.editarProceso', compact('proceso'));
+    }
+    public function actualizarProceso(Request $request, $id)
+    {
+        $proceso = Proceso::find($id);
+        $proceso->codigo = $request->codigo;
+        $proceso->nombre = $request->nombre;
+        $proceso->descripcion = $request->descripcion;
 
+        $proceso->save();
+        return redirect()->route('indexProceso');
+    }
+    public function eliminarProceso($id)
+    {
+        $proceso = Proceso::find($id);
+        $proceso->delete();
+
+        return redirect()->route('indexProceso')
+            ->with('mensaje', 'La localización se ha eliminado correctamente.');
     }
 }

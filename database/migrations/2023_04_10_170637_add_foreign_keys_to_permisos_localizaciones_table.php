@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('permisos_localizaciones', function (Blueprint $table) {
-            $table->foreign(['localizacion_id'], 'FK_permisos_localizaciones_localizaciones')->references(['localizacion_id'])->on('localizaciones')->onUpdate('CASCADE')->onDelete('CASCADE');
-            $table->foreign(['usuario_id'], 'FK_permisos_localizaciones_usuarios')->references(['usuario_id'])->on('usuarios')->onUpdate('CASCADE')->onDelete('CASCADE');
+        Schema::table('permisos_Localizaciones', function (Blueprint $table) {
+            $table->foreign(['localizacion_id'], 'FK_permisos_Localizaciones_Localizaciones')->references(['localizacion_id'])->on('Localizaciones')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->foreign(['usuario_id'], 'FK_permisos_Localizaciones_usuarios')->references(['usuario_id'])->on('usuarios')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
     }
 
@@ -26,9 +26,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('permisos_localizaciones', function (Blueprint $table) {
-            $table->dropForeign('FK_permisos_localizaciones_localizaciones');
-            $table->dropForeign('FK_permisos_localizaciones_usuarios');
+        Schema::table('permisos_Localizaciones', function (Blueprint $table) {
+            $table->dropForeign('FK_permisos_Localizaciones_Localizaciones');
+            $table->dropForeign('FK_permisos_Localizaciones_usuarios');
         });
     }
 };

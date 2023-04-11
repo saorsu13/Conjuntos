@@ -43,53 +43,21 @@
 <!-- Bootstrap Select -->
 <div class="col-12">
     <div class="card">
-        <h5 class="card-header">Agregar un Nuevo Cargo</h5>
+        <h5 class="card-header">Agregar Nuevo Proceso</h5>
         <div class="card-body">
             <div class="row">
 
-                <form action="{{ route('agregarCargo') }}" method="POST" class="form-horizontal" role="form" id="bootstrap">
-
-                    <label for="selectpickerBasic" class="form-label">Departamento</label>
-
-                    <select name="id_departamento" id="selectpickerBasic" class="selectpicker w-100" data-style="btn-default">
-                        @foreach($departamentos as $departamento)
-                        <option value="{{$departamento -> departamentos_id}}">{{$departamento -> nombre}}</option>
-                        @endforeach
-                    </select>
-                    <label for="selectpickerBasic" class="form-label">Cargo Precedente</label>
-                    <select name="cargoPrecedente" id="selectpickerBasic" class="selectpicker w-100" data-style="btn-default">
-                        <option >Auditor Interno</option>
-                        <option >Auxiliar Siso</option>
-                        <option >Coordinador de Calidad</option>
-                        <option >Coordinador(a) A</option>
-                        <option >Coordinador(a) AA</option>
-                        <option >Coordinador(a) AAA</option>
-                        <option >Coordinador(a) SGI</option>
-                        <option >Coordinador(a) SST</option>
-                        <option >Gerente Regional de Calidad</option>
-                        <option >profesional SST</option>
-                        <option >Siso</option>
-                        <option >Almacenista</option>
-                        <option >Plant Superintendent</option>
-                        <option >Plant Superintendent(C)</option>
-                        <option >Plant Superintendent(D)</option>
-                        <option >Analista de Informacion Comercial</option>
-                        <option >Ejecutiva Comercial</option>
-                        <option >Analista de Compras</option>
-                        <option >Auxiliar de Compras</option>
-
-                    </select>
+                <form action="{{ route('agregarProceso') }}" method="POST" class="form-horizontal" role="form" id="bootstrap">
+                    <div class="col-sm-6">
+                        <label for="defaultFormControlInput" class="form-label">Codigo</label>
+                        <input name="codigo" type="text" class="form-control" id="defaultFormControlInput" placeholder="John Doe" aria-describedby="defaultFormControlHelp" />
+                    </div>
                     <div class="col-sm-6">
                         <label for="defaultFormControlInput" class="form-label">Nombre</label>
-                        <input name="nombre" type="text" class="form-control" id="defaultFormControlInput" placeholder="" aria-describedby="defaultFormControlHelp" />
+                        <input name="nombre" type="text" class="form-control" id="defaultFormControlInput" placeholder="John Doe" aria-describedby="defaultFormControlHelp" />
                     </div>
-                    <div>
-                        <label for="selectpickerBasic" class="form-label">Descripcion</label>
-                        <textarea name="descripcion" rows="2" cols="50" class="form-control"></textarea>
-                    </div>
-
-                    <button class="btn btn-success">Guardar</button>
-                    <button class="btn btn-danger">Eliminar</button>
+                   
+                    <button class="btn btn-success">Actualizar</button>
                 </form>
             </div>
         </div>

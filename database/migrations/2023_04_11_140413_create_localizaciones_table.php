@@ -13,8 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('usuarios', function (Blueprint $table) {
-            $table->foreign(['localizacion_id'], 'FK_usuarios_Localizaciones')->references(['localizacion_id'])->on('Localizaciones')->onUpdate('CASCADE')->onDelete('CASCADE');
+        Schema::create('localizaciones', function (Blueprint $table) {
+            $table->increments('localizacion_id');
+            $table->string('codigo');
+            $table->string('nombre');
+            $table->string('descripcion')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('usuarios', function (Blueprint $table) {
-            $table->dropForeign('FK_usuarios_Localizaciones');
-        });
+        Schema::dropIfExists('localizaciones');
     }
 };

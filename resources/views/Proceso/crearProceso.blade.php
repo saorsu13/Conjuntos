@@ -56,63 +56,7 @@
                             <label for="defaultFormControlInput" class="form-label">Nombre</label>
                             <input name="nombre" type="text" class="form-control" id="defaultFormControlInput" placeholder="John Doe" aria-describedby="defaultFormControlHelp" />
                         </div>
-                        <div class="col-sm-6">
-                            <label for="defaultFormControlInput" class="form-label">Version</label>
-                            <input name="version" type="text" class="form-control" id="defaultFormControlInput" placeholder="John Doe" aria-describedby="defaultFormControlHelp" />
-                        </div>
-
-
-                        <label for="selectpickerBasic" class="form-label">Cargo Lider</label>
-                        <select name="cargoLider" id="selectpickerBasic" class="selectpicker w-100" data-style="btn-default">
-                            <option value="1">Asociacion de Empresas Seguras</option>
-                            <option value="1">Consultoria</option>
-                            <option value="1">Diseño De Servicios</option>
-                            <option value="1">Diseño De Sofware</option>
-                            <option>Formacion</option>
-                            <option>Gestion Comercial</option>
-                            <option>Gestion De La Mejora</option>
-                            <option>Gestion de Proyectos</option>
-                            <option>Gestion Del Conocimiento</option>
-                            <option>Gestion Financiera</option>
-                            <option>Outsourcing</option>
-                            <option>Planeacion Estrategica</option>
-                            <option>Procesos De Prueba</option>
-                            <option>Seguridad Privada</option>
-                            <option>Servicio De Software Iso</option>
-
-                        </select>
-                        <div>
-                            <label for="selectpickerBasic" class="form-label">Objetivo</label>
-                            <textarea name="objetivo" rows="2" cols="50" class="form-control"></textarea>
-                        </div>
-                        <div>
-                            <label for="selectpickerBasic" class="form-label">Requisito Cliente</label>
-                            <textarea name="requisitoCliente" rows="2" cols="50" class="form-control"></textarea>
-                        </div>
-                        <div>
-                            <label for="selectpickerBasic" class="form-label">Requisito Organización</label>
-                            <textarea name=" requisitoOrganizacion" rows="2" cols="50" class="form-control"></textarea>
-                        </div>
-                        <div>
-                            <label for="selectpickerBasic" class="form-label">Requisito Legal</label>
-                            <textarea name="requisitoLegal" rows="2" cols="50" class="form-control"></textarea>
-                        </div>
-                        <div>
-                            <label for="selectpickerBasic" class="form-label">Recursos</label>
-                            <textarea name="recursos" rows="2" cols="50" class="form-control"></textarea>
-                        </div>
-                        <div>
-                            <label for="selectpickerBasic" class="form-label">Riesgos Cliente</label>
-                            <textarea name="riesgosCliente" rows="2" cols="50" class="form-control"></textarea>
-                        </div>
-                        <div>
-                            <label for="selectpickerBasic" class="form-label">Riesgos a partes interesadas</label>
-                            <textarea name="riesgosPertesInteresadas" rows="2" cols="50" class="form-control"></textarea>
-                        </div>
-                        <div>
-                            <label for="selectpickerBasic" class="form-label">Riesgos Legal</label>
-                            <textarea name="riesgosLegales" rows="2" cols="50" class="form-control"></textarea>
-                        </div>
+                       
                         <button class="btn btn-success">Guardar</button>
                         <button class="btn btn-danger">Eliminar</button>
                     </form>

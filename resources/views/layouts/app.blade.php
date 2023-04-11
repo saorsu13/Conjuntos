@@ -100,19 +100,23 @@
     <script src="{{ asset('assets/vendor/libs/typeahead-js/typeahead.js')}}"></script>
 
     <script src="{{ asset('assets/vendor/js/menu.js') }}"></script>
+    @yield('script-core')
     <!-- endbuild -->
 
     <!-- Vendors JS -->
     <script src="{{ asset('assets/vendor/libs/apex-charts/apexcharts.js') }}"></script>
     <script src="{{ asset('assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js') }}"></script>
+    @yield('script-vendor')
 
 
     <!-- Main JS -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
+    @yield('script-main')
 
     <!-- Page JS -->
     <script src="{{ asset('assets/js/dashboards-analytics.js') }}"></script>
     <script src="{{ asset('assets/js/tables-datatables-advanced.js') }}"></script>
+    @yield('script-page')
 
 
 

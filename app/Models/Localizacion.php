@@ -28,7 +28,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Localizacion extends Model
 {
-	protected $table = 'localizaciones';
+	protected $table = 'Localizaciones';
 	protected $primaryKey = 'localizacion_id';
 
 
@@ -52,4 +52,9 @@ class Localizacion extends Model
 	{
 		return $this->hasMany(Usuario::class, 'localizacion_id');
 	}
+	public function documentos()
+	{
+		return $this->hasMany(Documento::class, 'localizacion_id');
+	}
+
 }

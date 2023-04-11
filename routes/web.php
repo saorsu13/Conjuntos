@@ -38,14 +38,17 @@ Route::delete('eliminarDepartamento/{id}',[\App\Http\Controllers\DepartamentoCon
 Route::get('indexCargo',[App\Http\Controllers\CargoController::class,'index'])->name('indexCargo');
 Route::get('crearCargo',[App\Http\Controllers\CargoController::class,'vistaCrearCargo'])->name('crearCargo');
 Route::post('agregarCargo',[App\Http\Controllers\CargoController::class,'agregarCargo'])->name('agregarCargo');
-Route::post('editarCargo',[App\Http\Controllers\CargoController::class,'editarCargo'])->name('editarCargo');
-Route::put('actualizarCargo',[App\Http\Controllers\CargoController::class,'actualizarCargo'])->name('actualizarCargo');
-Route::delete('eliminarCargo',[App\Http\Controllers\CargoController::class,'eliminarCargo'])->name('eliminarCargo');
+Route::post('editarCargo/{id}',[App\Http\Controllers\CargoController::class,'editarCargo'])->name('editarCargo');
+Route::put('actualizarCargo/{id}',[App\Http\Controllers\CargoController::class,'actualizarCargo'])->name('actualizarCargo');
+Route::delete('eliminarCargo/{id}',[App\Http\Controllers\CargoController::class,'eliminarCargo'])->name('eliminarCargo');
 
 //Rutas de Usuarios
 Route::get('indexUsuario',[App\Http\Controllers\UsuarioController::class,'index'])->name('indexUsuario');
 Route::get('crearUsuario',[App\Http\Controllers\UsuarioController::class,'vistaCrearUsuario'])->name('crearUsuario');
 Route::post('agregarUsuario',[App\Http\Controllers\UsuarioController::class,'agregarUsuario'])->name('agregarUsuario');
+Route::post('editarUsuario/{id}',[App\Http\Controllers\UsuarioController::class,'editarUsuario'])->name('editarUsuario');
+Route::put('actualizarUsuario/{id}',[App\Http\Controllers\UsuarioController::class,'actualizarUsuario'])->name('actualizarUsuario');
+Route::delete('eliminarUsuario/{id}',[App\Http\Controllers\UsuarioController::class,'eliminarUsuario'])->name('eliminarUsuario');
 
 //Ruta de Procesos
 Route::get('indexProceso',[App\Http\Controllers\ProcesoController::class,'index'])->name('indexProceso');
@@ -53,12 +56,12 @@ Route::get('crearProceso',[App\Http\Controllers\ProcesoController::class,'vistaC
 Route::post('agregarProceso',[App\Http\Controllers\ProcesoController::class,'agregarProceso'])->name('agregarProceso');
 
 //Rutas de Documentos
-// Route::get('document', [App\Http\Controllers\DocumentController::class, 'index'])->name('document');
-// Route::get('documentList', [App\Http\Controllers\DocumentController::class,'listDocument'])->name('documentList');
-// Route::get('documentCreate',[App\Http\Controllers\DocumentController::class, 'createDocument'])->name('documentCreate');
-// Route::post('agregarDocumento',[App\Http\Controllers\DocumentController::class,'addDocument'])->name('agregarDocumento');
-// Route::get('editDocument',[App\Http\Controllers\DocumentController::class,'editarDocumento'])->name('editDocument');;
-
+Route::get('indexDocumento', [App\Http\Controllers\DocumentoController::class, 'index'])->name('indexDocumento');
+Route::get('crearDocumento',[App\Http\Controllers\DocumentoController::class, 'vistaCrearDocumento'])->name('crearDocumento');
+Route::post('agregarDocumento',[App\Http\Controllers\DocumentoController::class,'agregarDocumento'])->name('agregarDocumento');
+Route::post('editarDocumento',[App\Http\Controllers\DocumentoController::class.'editarDocumento'])->name('editarDocumento');
+Route::put('actualizarDocumento',[App\Http\Controllers\DocumentoController::class,'actualizarDocumento'])->name('actualizarDocumento');
+Route::delete('eliminarDocumento',[App\Http\Controllers\DocumentoController::class,'eliminarDocumento'])->name('eliminarDocumento');
 
 //Rutas de Admin
 // Route::get('usuarios', [App\Http\Controllers\UserController::class, 'index'])->name('usuarios');

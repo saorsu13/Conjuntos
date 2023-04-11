@@ -62,7 +62,7 @@
                             <th>{{$departamento -> departamentos_id}}</th>
                             <th>{{$departamento -> nombre}}</th>
                             <th>{{$departamento -> descripcion}}</th>
-                            <th>{{$departamento -> localizaciones_dptos}}</th>
+                            <th>{{$departamento -> Localizaciones_dptos}}</th>
                             <th>
                             <form action="{{ route('editarDepartamento',['id' => $departamento->departamentos_id]) }}" method="POST" class="form-horizontal" role="form" id="bootstrap">
                                     @method('POST')

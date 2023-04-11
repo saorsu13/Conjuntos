@@ -57,15 +57,15 @@
                     </div>
                     <div class="col-sm-6">
                         <label for="defaultFormControlInput" class="form-label">Nombre</label>
-                        <input name="nombre" type="text" class="form-control" id="defaultFormControlInput" placeholder="John Doe" aria-describedby="defaultFormControlHelp" />
+                        <input name="nombre" type="text" class="form-control" id="defaultFormControlInput" placeholder="{{$usuario -> nombre}}" aria-describedby="defaultFormControlHelp" />
                     </div>
                     <div class="col-sm-6">
                         <label for="defaultFormControlInput" class="form-label">Correo Electronico</label>
-                        <input name="correoElectronico" type="text" class="form-control" id="defaultFormControlInput" placeholder="John Doe" aria-describedby="defaultFormControlHelp" />
+                        <input name="correoElectronico" type="text" class="form-control" id="defaultFormControlInput" placeholder="{{$usuario -> correo_electronico}}" aria-describedby="defaultFormControlHelp" />
                     </div>
                     <div class="col-sm-6">
                         <label for="defaultFormControlInput" class="form-label">Contraseña</label>
-                        <input name="contraseña" type="text" class="form-control" id="defaultFormControlInput" placeholder="John Doe" aria-describedby="defaultFormControlHelp" />
+                        <input name="contraseña" type="text" class="form-control" id="defaultFormControlInput" placeholder="{{$usuario -> contraseña}}" aria-describedby="defaultFormControlHelp" />
                     </div>
                     <div class="col-sm-6">
                     <label for="selectpickerBasic" class="form-label">Rol</label>
@@ -79,30 +79,30 @@
                     <div class="col-sm-6">
                     <label for="selectpickerBasic" class="form-label">Cargo</label>
                     <select name="cargo" id="selectpickerBasic" class="selectpicker w-100" data-style="btn-default">
-                        <option value="1">Auditor Interno</option>
-                        <option value="2">Auxiliar Siso</option>
-                        <option value="3">Coordinador de Calidad</option>
-                        <option value="4">Coordinador(a) A</option>
-                        <option value="5">Coordinador(a) AA</option>
-                        <option value="6">Coordinador(a) AAA</option>
-                        <option value="7">Coordinador(a) SGI</option>
-                        <option value="8">Coordinador(a) SST</option>
-                        <option value="9">Gerente Regional de Calidad</option>
-                        <option value="10">profesional SST</option>
-                        <option value="11">Siso</option>
-                        <option value="12">Almacenista</option>
-                        <option value="13">Plant Superintendent</option>
-                        <option value="14">Plant Superintendent(C)</option>
-                        <option value="15">Plant Superintendent(D)</option>
-                        <option value="16">Analista de Informacion Comercial</option>
-                        <option value="17">Ejecutiva Comercial</option>
-                        <option value="18">Analista de Compras</option>
-                        <option value="19">Auxiliar de Compras</option>
+                        <option >Auditor Interno</option>
+                        <option >Auxiliar Siso</option>
+                        <option >Coordinador de Calidad</option>
+                        <option >Coordinador(a) A</option>
+                        <option >Coordinador(a) AA</option>
+                        <option >Coordinador(a) AAA</option>
+                        <option >Coordinador(a) SGI</option>
+                        <option >Coordinador(a) SST</option>
+                        <option >Gerente Regional de Calidad</option>
+                        <option >profesional SST</option>
+                        <option >Siso</option>
+                        <option >Almacenista</option>
+                        <option >Plant Superintendent</option>
+                        <option >Plant Superintendent(C)</option>
+                        <option >Plant Superintendent(D)</option>
+                        <option >Analista de Informacion Comercial</option>
+                        <option >Ejecutiva Comercial</option>
+                        <option >Analista de Compras</option>
+                        <option >Auxiliar de Compras</option>
                     </select>
                     </div>
                     <div class="col-sm-6">
                         <label for="defaultFormControlInput" class="form-label">Localizacion Usuario</label>
-                        <input name="localizacionUsuario" type="text" class="form-control" id="defaultFormControlInput" placeholder="John Doe" aria-describedby="defaultFormControlHelp" />
+                        <input name="localizacionUsuario" type="text" class="form-control" id="defaultFormControlInput" placeholder="{{$usuario -> localizacion_usuario}}" aria-describedby="defaultFormControlHelp" />
                     </div>
 
                     <button class="btn btn-success">Guardar</button>

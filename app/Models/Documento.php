@@ -25,6 +25,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $responsable_revisar_id
  * @property string $responsable_aprobar_id
  * @property string $etiqueta_id
+ * @property string|null $descripcion
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * 
@@ -61,7 +62,8 @@ class Documento extends Model
 		'responsable_editar_id',
 		'responsable_revisar_id',
 		'responsable_aprobar_id',
-		'etiqueta_id'
+		'etiqueta_id',
+		'descripcion'
 	];
 
 	public function departamento()
@@ -69,9 +71,9 @@ class Documento extends Model
 		return $this->belongsTo(Departamento::class);
 	}
 
-	public function localizacione()
+	public function localizacion()
 	{
-		return $this->belongsTo(Localizacione::class, 'localizacion_id');
+		return $this->belongsTo(Localizacion::class, 'localizacion_id');
 	}
 
 	public function proceso()

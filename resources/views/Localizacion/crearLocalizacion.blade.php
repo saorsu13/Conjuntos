@@ -51,18 +51,19 @@
 
                     <div class="col-sm-6">
                         <label for="defaultFormControlInput" class="form-label">Nombre</label>
-                        <input name="nombre" type="text" class="form-control" id="defaultFormControlInput" placeholder="John Doe" aria-describedby="defaultFormControlHelp" />
+                        <input name="nombre" type="text" class="form-control" id="defaultFormControlInput" placeholder="" aria-describedby="defaultFormControlHelp" />
                     </div>
                     <div class="col-sm-6">
                         <label for="defaultFormControlInput" class="form-label">Codigo</label>
-                        <input name="codigo" type="text" class="form-control" id="defaultFormControlInput" placeholder="John Doe" aria-describedby="defaultFormControlHelp" />
+                        <input name="codigo" type="text" class="form-control" id="defaultFormControlInput" placeholder="" aria-describedby="defaultFormControlHelp" />
                     </div>
                     <div>
                         <label for="selectpickerBasic" class="form-label">Descripcion</label>
                         <textarea name="descripcion" rows="2" cols="50" class="form-control"></textarea>
                     </div>
+                    
                     <button class="btn btn-success">Guardar</button>
-                    <button class="btn btn-danger">Eliminar</button>
+                    <button class="btn btn-danger">Cancelar</button>
                 </form>
             </div>
         </div>

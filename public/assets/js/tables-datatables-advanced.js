@@ -118,20 +118,6 @@ $(function () {
         }
       });
     });
-
-    var dt_filter = dt_filter_table.DataTable({
-      ajax: assetsPath + 'json/table-datatable.json',
-      columns: [
-        { data: 'full_name' },
-        { data: 'email' },
-        { data: 'post' },
-        { data: 'city' },
-        { data: 'start_date' },
-        { data: 'salary' }
-      ],
-      orderCellsTop: true,
-      dom: '<"row"<"col-sm-12 col-md-6"l><"col-sm-12 col-md-6 d-flex justify-content-center justify-content-md-end"f>><"table-responsive"t><"row"<"col-sm-12 col-md-6"i><"col-sm-12 col-md-6"p>>'
-    });
   }
 
   // Advanced Search
@@ -206,7 +192,7 @@ $(function () {
   // Responsive Table
   // --------------------------------------------------------------------
 
-  if (dt_responsive_table.length) {
+  if ('') {
     var dt_responsive = dt_responsive_table.DataTable({
       ajax: assetsPath + 'json/table-datatable.json',
       columns: [

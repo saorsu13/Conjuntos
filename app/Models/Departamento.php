@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class Departamento
  * 
  * @property int $departamentos_id
+ * @property int|null $localizacion_id
  * @property string $nombre
  * @property string $descripcion
  * @property string $localizaciones_dptos
@@ -31,7 +32,12 @@ class Departamento extends Model
 	protected $table = 'departamentos';
 	protected $primaryKey = 'departamentos_id';
 
+	protected $casts = [
+		'localizacion_id' => 'int'
+	];
+
 	protected $fillable = [
+		'localizacion_id',
 		'nombre',
 		'descripcion',
 		'localizaciones_dptos'

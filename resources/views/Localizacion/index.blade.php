@@ -58,7 +58,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($localizaciones as $localizacion)
+                        @foreach($Localizaciones as $localizacion)
                         <tr>
                             <th>{{$localizacion->localizacion_id}}</th>
                             <th>{{$localizacion -> codigo}}</th>

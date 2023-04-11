@@ -9,8 +9,8 @@ class LocalizacionController extends Controller
 {
     public function index()
     {
-        $localizaciones = Localizacion::all();
-        return view('Localizacion.index', compact('localizaciones'));
+        $Localizaciones = Localizacion::all();
+        return view('Localizacion.index', compact('Localizaciones'));
     }
     public function vistaCrearLocalizacion()
     {

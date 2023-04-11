@@ -111,31 +111,33 @@
                     <thead>
                       <tr>
                         <th></th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Post</th>
-                        <th>City</th>
+                        <th>Codigo</th>
+                        <th>Nombre</th>
+                        <th>Revision</th>
+                        <!-- <th>City</th>
                         <th>Date</th>
                         <th>Salary</th>
                         <th>Age</th>
                         <th>Experience</th>
-                        <th>Status</th>
+                        <th>Status</th> -->
                       </tr>
                     </thead>
-                    <tfoot>
+                    <tbody>
+                      @foreach($documentos as $documento)
                       <tr>
                         <th></th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Post</th>
-                        <th>City</th>
+                        <th>{{$documento -> codigo}}</th>
+                        <th>{{$documento -> nombre}}</th>
+                        <th>{{$documento -> localizacion -> nombre}}</th>
+                        <!-- <th>City</th>
                         <th>Date</th>
                         <th>Salary</th>
                         <th>Age</th>
                         <th>Experience</th>
-                        <th>Status</th>
+                        <th>Status</th> -->
                       </tr>
-                    </tfoot>
+                      @endforeach
+                    </tbody>
                   </table>
                 </div>
               </div>
