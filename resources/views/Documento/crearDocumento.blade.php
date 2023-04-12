@@ -169,20 +169,20 @@
                     <label for="selectpickerBasic" class="form-label">Responsable Editar</label>
                     <select name="responsableEditor" id="responsableEditor" class="selectpicker w-100" data-style="btn-default" multiple data-icon-base="bx" data-tick-icon="bx-check text-primary">
                         @foreach($usuarios as $usuario)
-                        <option value="{{$usuario -> usuario_id}}">{{$usuario -> nombre}}</option>
+                        <option value="{{$usuario -> usuario_id}}">{{$usuario -> cargo}}</option>
                         @endforeach
 
                     </select>
                     <label for="selectpickerBasic" class="form-label">Responsable Revisar</label>
                     <select name="responsableRevisar" id="responsableRevisar" class="selectpicker w-100" data-style="btn-default" multiple data-icon-base="bx" data-tick-icon="bx-check text-primary">
                         @foreach($usuarios as $usuario)
-                        <option value="{{$usuario -> usuario_id}}">{{$usuario -> nombre}}</option>
+                        <option value="{{$usuario -> usuario_id}}">{{$usuario -> cargo}}</option>
                         @endforeach
                     </select>
                     <label for="selectpickerBasic" class="form-label">Responsable Aprobar</label>
                     <select name="responsableAprobar" id="responsableAprobar" class="selectpicker w-100" data-style="btn-default" multiple data-icon-base="bx" data-tick-icon="bx-check text-primary">
                         @foreach($usuarios as $usuario)
-                        <option value="{{$usuario -> usuario_id}}">{{$usuario -> nombre}}</option>
+                        <option value="{{$usuario -> usuario_id}}">{{$usuario -> cargo}}</option>
                         @endforeach
                     </select>
                     <!-- Full Editor -->
