@@ -63,6 +63,9 @@ Route::post('editarDocumento',[App\Http\Controllers\DocumentoController::class.'
 Route::put('actualizarDocumento',[App\Http\Controllers\DocumentoController::class,'actualizarDocumento'])->name('actualizarDocumento');
 Route::delete('eliminarDocumento',[App\Http\Controllers\DocumentoController::class,'eliminarDocumento'])->name('eliminarDocumento');
 
+//Rutas de Requisitos
+Route::get('indexRequisito', [App\Http\Controllers\RequisitoController::class,'index'])->name('indexRequisito');
+
 //Rutas de Admin
 // Route::get('usuarios', [App\Http\Controllers\UserController::class, 'index'])->name('usuarios');
 

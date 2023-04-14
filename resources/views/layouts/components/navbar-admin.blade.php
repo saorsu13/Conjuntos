@@ -50,7 +50,7 @@
                             <li><a class="dropdown-item" href="{{ route('indexCargo') }}">Cargos</a></li>
                             <li><a class="dropdown-item" href="{{ route('indexUsuario') }}">Usuarios</a></li>
                             <li><a class="dropdown-item" href="{{ route('indexProceso') }}">Procesos</a></li>
-                            <li><a class="dropdown-item" href="javascript:void(0);">Requisitos</a></li>
+                            <li><a class="dropdown-item" href="{{ route('indexRequisito')}}">Requisitos</a></li>
                             <li><a class="dropdown-item" href="javascript:void(0);">Actividades</a></li>
                             <li><a class="dropdown-item" href="javascript:void(0);">Permisos</a></li>
                             <li>
