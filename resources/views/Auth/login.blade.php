@@ -43,8 +43,8 @@
                                         <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Ingreso a su cuenta</h5>
 
                                         <div class="form-outline mb-4">
-                                            <input name="email"type="email" id="form2Example17" class="form-control form-control-lg" />
-                                            <label class="form-label" for="form2Example17">Correo Electronico</label>
+                                            <input name="email" type="nombre" id="form2Example17" class="form-control form-control-lg" />
+                                            <label class="form-label" for="form2Example17">Nombre</label>
                                         </div>
 
                                         <div class="form-outline mb-4">

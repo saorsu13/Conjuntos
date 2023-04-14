@@ -19,7 +19,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property Carbon|null $updated_at
  * 
  * @property Requisito $requisito
- * @property Usuario $usuario
+ * @property User $usuario
  *
  * @package App\Models
  */
@@ -45,6 +45,6 @@ class PermisosSistema extends Model
 
 	public function usuario()
 	{
-		return $this->belongsTo(Usuario::class);
+		return $this->belongsTo(User::class);
 	}
 }

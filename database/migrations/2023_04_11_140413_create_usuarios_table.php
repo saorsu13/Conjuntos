@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('activo');
             $table->string('nombre');
             $table->string('correo_electronico');
-            $table->string('contraseña');
+            $table->string('contrasena');
             $table->string('rol');
             $table->string('cargo');
             $table->string('localizacion_usuario');

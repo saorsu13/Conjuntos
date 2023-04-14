@@ -51,8 +51,6 @@
                             <li><a class="dropdown-item" href="{{ route('indexUsuario') }}">Usuarios</a></li>
                             <li><a class="dropdown-item" href="{{ route('indexProceso') }}">Procesos</a></li>
                             <li><a class="dropdown-item" href="javascript:void(0);">Requisitos</a></li>
-                            <li><a class="dropdown-item" href="javascript:void(0);">Partres Interesadas</a></li>
-                            <li><a class="dropdown-item" href="javascript:void(0);">Departamentos</a></li>
                             <li><a class="dropdown-item" href="javascript:void(0);">Actividades</a></li>
                             <li><a class="dropdown-item" href="javascript:void(0);">Permisos</a></li>
                             <li>

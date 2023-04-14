@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Documento;
 use App\Models\Localizacion;
-use App\Models\Usuario;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DocumentoController extends Controller
@@ -31,7 +31,7 @@ class DocumentoController extends Controller
 
     public function vistaCrearDocumento()
     {
-        $usuarios = Usuario::all();
+        $usuarios = User::all();
         $Localizaciones = Localizacion::all();
         return view('Documento.crearDocumento',compact('usuarios', 'Localizaciones'));
     }

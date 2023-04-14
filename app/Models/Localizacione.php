@@ -23,7 +23,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property Collection|Documento[] $documentos
  * @property Collection|PermisosLocalizacione[] $permisos_localizaciones
  * @property Collection|Proceso[] $procesos
- * @property Collection|Usuario[] $usuarios
+ * @property Collection|User[] $usuarios
  *
  * @package App\Models
  */
@@ -55,6 +55,6 @@ class Localizacione extends Model
 
 	public function usuarios()
 	{
-		return $this->hasMany(Usuario::class, 'localizacion_id');
+		return $this->hasMany(User::class, 'localizacion_id');
 	}
 }

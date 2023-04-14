@@ -65,7 +65,7 @@
                     </div>
                     <div class="col-sm-6">
                         <label for="defaultFormControlInput" class="form-label">Contraseña</label>
-                        <input name="contraseña" type="text" class="form-control" id="defaultFormControlInput" placeholder="{{$usuario -> contraseña}}" aria-describedby="defaultFormControlHelp" />
+                        <input name="contrasena" type="text" class="form-control" id="defaultFormControlInput" placeholder="{{$usuario -> contrasena}}" aria-describedby="defaultFormControlHelp" />
                     </div>
                     <div class="col-sm-6">
                     <label for="selectpickerBasic" class="form-label">Rol</label>

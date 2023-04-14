@@ -12,16 +12,20 @@ class SecurityController extends Controller
     {
         return view('Auth.login');
     }
-    // public function login(Request $request){
-    //     $credentials = [ 'email' => $request->email, 'password' => $request['password'], ];
-    //     if (\Auth::attempt($credentials))
-    //     { 
-    //         \Session::put('tenant',\Auth::user()->tenant_user->tenant->tenant_databases);
-    //         return redirect()->route('home'); 
-    //     }
-    // }
-    // public function logout(){
-    //     \Auth::logout();
-    //     return redirect()->route('login');
-    // }
+    public function login(Request $request){
+        
+        $credentials = [ 'email' => $request->email, 'password' => $request['password']];
+        dd(\Auth::attempt($credentials));
+        if (\Auth::attempt($credentials))
+        { 
+            return redirect()->route('home'); 
+        }
+        else{
+            echo('Usuario Invalido');
+        }
+    }
+    public function logout(){
+        \Auth::logout();
+        return redirect()->route('login');
+    }
 }
