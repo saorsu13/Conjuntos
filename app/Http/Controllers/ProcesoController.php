@@ -10,7 +10,8 @@ class ProcesoController extends Controller
 
     public function index()
     {
-        return view('Proceso.index');
+        $procesos=Proceso::all();
+        return view('Proceso.index',compact('procesos'));
     }
     public function vistaCrearProceso()
     {
