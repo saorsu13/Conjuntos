@@ -61,11 +61,11 @@
                     </div>
                     <div class="col-sm-6">
                         <label for="defaultFormControlInput" class="form-label">Correo Electronico</label>
-                        <input name="correoElectronico" type="text" class="form-control" id="defaultFormControlInput" placeholder="{{$usuario -> correo_electronico}}" aria-describedby="defaultFormControlHelp" />
+                        <input name="email" type="text" class="form-control" id="defaultFormControlInput" placeholder="{{$usuario -> email}}" aria-describedby="defaultFormControlHelp" />
                     </div>
                     <div class="col-sm-6">
                         <label for="defaultFormControlInput" class="form-label">Contraseña</label>
-                        <input name="contrasena" type="text" class="form-control" id="defaultFormControlInput" placeholder="{{$usuario -> contrasena}}" aria-describedby="defaultFormControlHelp" />
+                        <input name="password" type="text" class="form-control" id="defaultFormControlInput" placeholder="{{$usuario -> password}}" aria-describedby="defaultFormControlHelp" />
                     </div>
                     <div class="col-sm-6">
                     <label for="selectpickerBasic" class="form-label">Rol</label>

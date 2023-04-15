@@ -27,11 +27,11 @@ class UsuarioController extends Controller
         $usuario->localizacion_id=3;
         $usuario->activo=$request->activo == 'on' ? 1 : 0;
 		$usuario->nombre=$request->nombre;
-		$usuario->email=$request->correoElectronico;
-		$usuario->password=$request->contraseña;
+		$usuario->email=$request->email;
+		$usuario->password=$request->password;
 		$usuario->rol=$request->rol;
         $usuario->cargo=$request->cargo;
-		$usuario->localizacion_usuario=$request->localizacionUsuario;
+		$usuario->localizacion_usuario=$request->Localizacion_usuario;
 		
         $usuario->save();
 
@@ -49,11 +49,11 @@ class UsuarioController extends Controller
         $usuario->localizacion_id=3;
         $usuario->activo=$request->activo == 'on' ? 1 : 0;
 		$usuario->nombre=$request->nombre;
-		$usuario->email=$request->correoElectronico;
-		$usuario->password=$request->contraseña;
+		$usuario->email=$request->email;
+		$usuario->password=$request->password;
 		$usuario->rol=$request->rol;
         $usuario->cargo=$request->cargo;
-		$usuario->localizacion_usuario=$request->localizacionUsuario;
+		$usuario->localizacion_usuario=$request->localizacion_usuario;
 
         $usuario->save();
         return redirect()->route('indexUsuario');

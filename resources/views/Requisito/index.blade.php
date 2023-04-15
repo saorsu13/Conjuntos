@@ -17,7 +17,7 @@
                 </button>
 
                 <div class="">
-                    <a class="btn btn-primary" href="{{ route('crearLocalizacion')}}" role="button" title="Agregar Nueva Localizacion">
+                    <a class="btn btn-primary" href="{{ route('crearRequisito')}}" role="button" title="Agregar Nueva Requisito">
                         <i class="fas fa-puzzle-piece"></i>
                     </a>
                     <a class="btn btn-primary" href="" role="button" title="Recargar Tabla">
@@ -52,6 +52,7 @@
                             <th>Nombre</th>
                             <th>Codigo</th>
                             <th>Descripcion</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -60,6 +61,17 @@
                             <th>{{$requisito -> nombre}}</th>
                             <th>{{$requisito -> codigo}}</th>
                             <th>{{$requisito -> descripcion}}</th>
+                            <th>
+                                <form action="{{ route('editarRequisito',['id' => $requisito->requisito_id]) }}" method="POST" class="form-horizontal" role="form" id="bootstrap">
+                                    @method('POST')
+                                    <button class="btn btn-success edit-button">Editar</button>
+                                </form>
+                                <br>
+                                <form action="{{ route('eliminarProceso', $requisito->requisito_id) }}" method="POST">
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                                </form>
+                            </th>
                         </tr>
                         @endforeach
                     </tbody>

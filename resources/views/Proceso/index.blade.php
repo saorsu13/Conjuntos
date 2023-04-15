@@ -50,8 +50,6 @@
                 <table class="dt-column-search table table-bordered">
                     <thead>
                         <tr>
-                            <th>Departamento</th>
-                            <th>Localizacion</th>
                             <th>Codigo</th>
                             <th>Nombre</th>
                             <th>Acciones</th>
@@ -61,18 +59,16 @@
                     <tbody>
                         @foreach($procesos as $proceso)
                         <tr>
-                            <th>{{$proceso -> departamento -> nombre}}</th>
-                            <th>{{$proceso -> localizacion -> nombre}}</th>
                             <th>{{$proceso -> codigo}}</th>
                             <th>{{$proceso -> nombre}}</th>
 
                             <th>
-                                <form action="{{ route('editarDepartamento',['id' => $departamento->departamentos_id]) }}" method="POST" class="form-horizontal" role="form" id="bootstrap">
+                                <form action="{{ route('editarProceso',['id' => $proceso->proceso_id]) }}" method="POST" class="form-horizontal" role="form" id="bootstrap">
                                     @method('POST')
                                     <button class="btn btn-success edit-button">Editar</button>
                                 </form>
                                 <br>
-                                <form action="{{ route('eliminarDepartamento', $departamento->departamentos_id) }}" method="POST">
+                                <form action="{{ route('eliminarProceso', $proceso->proceso_id) }}" method="POST">
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">Eliminar</button>
                                 </form>

@@ -57,8 +57,9 @@
                             <input name="nombre" type="text" class="form-control" id="defaultFormControlInput" placeholder="John Doe" aria-describedby="defaultFormControlHelp" />
                         </div>
                        
+                       
                         <button class="btn btn-success">Guardar</button>
-                        <button class="btn btn-danger">Eliminar</button>
+                        <button class="btn btn-danger">Cancelar</button>
                     </form>
                 </div>
             </div>

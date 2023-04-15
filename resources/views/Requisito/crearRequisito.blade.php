@@ -43,13 +43,12 @@
 <!-- Bootstrap Select -->
 <div class="col-12">
     <div class="card">
-        <h5 class="card-header">Agregar Nuevo Proceso</h5>
+        <h5 class="card-header">Agregar Nuevo Requisito</h5>
         <div class="card-body">
             <div class="row">
 
-                <form action="{{  route('actualizarProceso',['id' => $proceso->proceso_id]) }}" method="POST" class="form-horizontal" role="form" id="bootstrap">
-                @method('PUT')    
-                <div class="col-sm-6">
+                <form action="{{ route('agregarRequisito') }}" method="POST" class="form-horizontal" role="form" id="bootstrap">
+                    <div class="col-sm-6">
                         <label for="defaultFormControlInput" class="form-label">Codigo</label>
                         <input name="codigo" type="text" class="form-control" id="defaultFormControlInput" placeholder="John Doe" aria-describedby="defaultFormControlHelp" />
                     </div>
@@ -57,8 +56,12 @@
                         <label for="defaultFormControlInput" class="form-label">Nombre</label>
                         <input name="nombre" type="text" class="form-control" id="defaultFormControlInput" placeholder="John Doe" aria-describedby="defaultFormControlHelp" />
                     </div>
-                   
-                    <button class="btn btn-success">Actualizar</button>
+                    <div>
+                        <label for="selectpickerBasic" class="form-label">Descripcion</label>
+                        <textarea name="descripcion" rows="2" cols="50" class="form-control"></textarea>
+                    </div>
+                    <button class="btn btn-success">Guardar</button>
+                    <button class="btn btn-danger">Cancelar</button>
                 </form>
             </div>
         </div>

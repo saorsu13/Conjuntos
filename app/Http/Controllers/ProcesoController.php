@@ -21,11 +21,13 @@ class ProcesoController extends Controller
     {
         $proceso = new Proceso();
         $proceso -> codigo = $request ->codigo;
-        $proceso -> nombre = $request ->codigo;
+        $proceso -> nombre = $request ->nombre;
+        $proceso -> departamento_id = 1;
+        $proceso -> localizacion_id = 3;
 
         $proceso ->save();
 
-        return redirect()->route('proceso');
+        return redirect()->route('indexProceso');
 
     }
     public function editarProceso($id)
@@ -38,7 +40,8 @@ class ProcesoController extends Controller
         $proceso = Proceso::find($id);
         $proceso->codigo = $request->codigo;
         $proceso->nombre = $request->nombre;
-        $proceso->descripcion = $request->descripcion;
+        $proceso -> departamento_id = 1;
+        $proceso -> localizacion_id = 3;
 
         $proceso->save();
         return redirect()->route('indexProceso');

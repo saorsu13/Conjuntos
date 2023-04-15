@@ -54,17 +54,25 @@ Route::delete('eliminarUsuario/{id}',[App\Http\Controllers\UsuarioController::cl
 Route::get('indexProceso',[App\Http\Controllers\ProcesoController::class,'index'])->name('indexProceso');
 Route::get('crearProceso',[App\Http\Controllers\ProcesoController::class,'vistaCrearProceso'])->name('crearProceso');
 Route::post('agregarProceso',[App\Http\Controllers\ProcesoController::class,'agregarProceso'])->name('agregarProceso');
+Route::post('editarProceso/{id}', [\App\Http\Controllers\ProcesoController::class, 'editarProceso'])->name('editarProceso');
+Route::put('actualizarProceso/{id}',[App\Http\Controllers\ProcesoController::class,'actualizarProceso'])->name('actualizarProceso');
+Route::delete('eliminarProceso/{id}',[App\Http\Controllers\ProcesoController::class,'eliminarProceso'])->name('eliminarProceso');
+
+//Rutas de Requisitos
+Route::get('indexRequisito', [App\Http\Controllers\RequisitoController::class,'index'])->name('indexRequisito');
+Route::get('crearRequisito',[App\Http\Controllers\RequisitoController::class, 'vistaCrearRequisito'])->name('crearRequisito');
+Route::post('agregarRequisito',[App\Http\Controllers\RequisitoController::class,'agregarRequisito'])->name('agregarRequisito');
+Route::post('editarRequisito/{id}',[App\Http\Controllers\RequisitoController::class,'editarRequisito'])->name('editarRequisito');
+Route::put('actualizarRequisito/{id}',[App\Http\Controllers\RequisitoController::class,'actualizarRequisito'])->name('actualizarRequisito');
+Route::delete('eliminarRequisito/{id}',[App\Http\Controllers\RequisitoController::class,'eliminarRequisito'])->name('eliminarRequisito');
 
 //Rutas de Documentos
 Route::get('indexDocumento', [App\Http\Controllers\DocumentoController::class, 'index'])->name('indexDocumento');
 Route::get('crearDocumento',[App\Http\Controllers\DocumentoController::class, 'vistaCrearDocumento'])->name('crearDocumento');
 Route::post('agregarDocumento',[App\Http\Controllers\DocumentoController::class,'agregarDocumento'])->name('agregarDocumento');
-Route::post('editarDocumento',[App\Http\Controllers\DocumentoController::class.'editarDocumento'])->name('editarDocumento');
+Route::post('editarDocumento',[App\Http\Controllers\DocumentoController::class,'editarDocumento'])->name('editarDocumento');
 Route::put('actualizarDocumento',[App\Http\Controllers\DocumentoController::class,'actualizarDocumento'])->name('actualizarDocumento');
 Route::delete('eliminarDocumento',[App\Http\Controllers\DocumentoController::class,'eliminarDocumento'])->name('eliminarDocumento');
-
-//Rutas de Requisitos
-Route::get('indexRequisito', [App\Http\Controllers\RequisitoController::class,'index'])->name('indexRequisito');
 
 //Rutas de Admin
 // Route::get('usuarios', [App\Http\Controllers\UserController::class, 'index'])->name('usuarios');
