@@ -73,7 +73,7 @@
                         <option>Usuario</option>
                         <option>Invitado</option>
                         <option>Administrador</option>
-                        <option>Webmaster</option>
+                        <option>webmaster</option>
                     </select>
                     </div>
                     <div class="col-sm-6">

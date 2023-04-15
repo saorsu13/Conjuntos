@@ -13,9 +13,7 @@ class SecurityController extends Controller
         return view('Auth.login');
     }
     public function login(Request $request){
-        
         $credentials = [ 'email' => $request->email, 'password' => $request['password']];
-        dd(\Auth::attempt($credentials));
         if (\Auth::attempt($credentials))
         { 
             return redirect()->route('home'); 

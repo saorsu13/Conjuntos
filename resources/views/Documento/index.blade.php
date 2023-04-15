@@ -15,7 +15,7 @@
   <div class="card">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="">Documentos</a>
+        <a class="navbar-brand" href=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -23,7 +23,7 @@
           <ul class="navbar-nav">
             <!-- Nav Item -->
             <li class="nav-item dropdown">
-              <button title="Seleccionar Documentos" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <button title="Seleccionar Documentos" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="margin-right: 10px">
                 Todos los Documentos
               </button>
               <ul class="dropdown-menu dropdown-menu">
@@ -103,48 +103,52 @@
 
     </nav>
     <br />
-              <!-- Responsive Datatable -->
-              <div class="card">
-                <h5 class="card-header">Responsive Datatable</h5>
-                <div class="card-datatable table-responsive">
-                  <table class="dt-responsive table table-bordered">
-                    <thead>
-                      <tr>
-                        <th></th>
-                        <th>Codigo</th>
-                        <th>Nombre</th>
-                        <th>Revision</th>
-                        <!-- <th>City</th>
-                        <th>Date</th>
-                        <th>Salary</th>
-                        <th>Age</th>
-                        <th>Experience</th>
-                        <th>Status</th> -->
-                      </tr>
-                    </thead>
-                    <tbody>
-                      @foreach($documentos as $documento)
-                      <tr>
-                        <th></th>
-                        <th>{{$documento -> codigo}}</th>
-                        <th>{{$documento -> nombre}}</th>
-                        <th>{{$documento -> localizacion -> nombre}}</th>
-                        <!-- <th>City</th>
-                        <th>Date</th>
-                        <th>Salary</th>
-                        <th>Age</th>
-                        <th>Experience</th>
-                        <th>Status</th> -->
-                      </tr>
-                      @endforeach
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <!--/ Responsive Datatable -->
+    <div class="col-12">
+    <button class="btn  btn-primary" style="margin-top: 15px;margin-left: 20px;margin-right: 10px;" href="home" role="button" title="Listado Maestro">
+       Documentos por PROCESAR
+    </button>
+    <button class="btn  btn-primary" style="margin-top: 15px;margin-right: 10px" href="home" role="button" title="Listado Maestro">
+       Documentos por EDITAR
+    </button>
+    <button class="btn  btn-primary" style="margin-top: 15px;margin-right: 10px" href="home" role="button" title="Listado Maestro">
+       Documentos por REVISAR
+    </button>
+    <button class="btn  btn-primary" style="margin-top: 15px;margin-right: 10px" href="home" role="button" title="Listado Maestro">
+       Documentos por APROBAR
+    </button>
+      <!-- Responsive Datatable -->
+      <div class="card" style="margin-top: 15px;margin-left: 20px;margin-right: 20px;">
+        <h5 class="card-header">Documentos Publicados a los cuales tengo Acceso</h5>
+        <div class="card-datatable table-responsive">
+          <table class="dt-responsive table table-bordered">
+            <thead>
+              <tr>
+                <th>N°</th>
+                <th>Codigo</th>
+                <th>Nombre</th>
+                <th>Version</th>
+                <th>Publicado</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach($documentos as $documento)
+              <tr>
+                <th></th>
+                <th>{{$documento -> codigo}}</th>
+                <th>{{$documento -> nombre}}</th>
+                <th>{{$documento -> version}}</th>
+                <th>{{$documento -> localizacion -> nombre}}</th>
+              </tr>
+              @endforeach
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!--/ Responsive Datatable -->
+    </div>
   </div>
   <!--/ Responsive Datatable -->
-  
+
 
 </div>
 

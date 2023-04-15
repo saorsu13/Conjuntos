@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="utf8mb4" collation="utf8mb4_0900_ai_ci">new_isooone</database>
+</source>
+<canvas zoom="100">
+<tables>
+<table name="usuarios" view="colnames">
+<left>456</left>
+<top>29</top>
+<width>110</width>
+<height>197</height>
+<sql_create_table>CREATE TABLE `usuarios` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(255) NOT NULL,
+  `correo` varchar(255) NOT NULL,
+  `contrasena` varchar(255) NOT NULL,
+  `rol` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci</sql_create_table>
+</table>
+<table name="documentos" view="colnames">
+<left>24</left>
+<top>382</top>
+<width>112</width>
+<height>154</height>
+<sql_create_table>CREATE TABLE `documentos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `codigo` varchar(255) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `version` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci</sql_create_table>
+</table>
+<table name="localizaciones" view="colnames">
+<left>1034</left>
+<top>486</top>
+<width>112</width>
+<height>140</height>
+<sql_create_table>CREATE TABLE `localizaciones` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `codigo` varchar(255) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci</sql_create_table>
+</table>
+<table name="departamentos" view="colnames">
+<left>656</left>
+<top>526</top>
+<width>116</width>
+<height>136</height>
+<sql_create_table>CREATE TABLE `departamentos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(255) NOT NULL,
+  `descripcion` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci</sql_create_table>
+</table>
+<table name="cargos" view="colnames">
+<left>478</left>
+<top>271</top>
+<width>143</width>
+<height>180</height>
+<sql_create_table>CREATE TABLE `cargos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(255) NOT NULL,
+  `descripcion` varchar(255) NOT NULL,
+  `departamento_id` int DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_cargos_departamentos` (`departamento_id`),
+  CONSTRAINT `FK_cargos_departamentos` FOREIGN KEY (`departamento_id`) REFERENCES `departamentos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci</sql_create_table>
+</table>
+<table name="areas" view="colnames">
+<left>206</left>
+<top>487</top>
+<width>110</width>
+<height>163</height>
+<sql_create_table>CREATE TABLE `areas` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(255) NOT NULL,
+  `descripcion` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci</sql_create_table>
+</table>
+<table name="cargos_usuarios" view="colnames">
+<left>229</left>
+<top>248</top>
+<width>110</width>
+<height>163</height>
+<sql_create_table>CREATE TABLE `cargos_usuarios` (
+  `id` int NOT NULL,
+  `usuario_id` int DEFAULT NULL,
+  `cargo_id` int DEFAULT NULL,
+  `rol_id` int DEFAULT NULL,
+  `departamento_area_id` int DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_cargos_usuarios_usuarios` (`usuario_id`),
+  KEY `FK_cargos_usuarios_cargos` (`cargo_id`),
+  KEY `FK_cargos_usuarios_roles` (`rol_id`),
+  KEY `FK_cargos_usuarios` (`departamento_area_id`),
+  CONSTRAINT `FK_cargos_usuarios` FOREIGN KEY (`departamento_area_id`) REFERENCES `departamentos_areas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_cargos_usuarios_cargos` FOREIGN KEY (`cargo_id`) REFERENCES `cargos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_cargos_usuarios_roles` FOREIGN KEY (`rol_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_cargos_usuarios_usuarios` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci</sql_create_table>
+</table>
+<table name="departamentos_localizaciones" view="colnames">
+<left>837</left>
+<top>337</top>
+<width>143</width>
+<height>163</height>
+<sql_create_table>CREATE TABLE `departamentos_localizaciones` (
+  `id` int NOT NULL,
+  `departamento_id` int DEFAULT NULL,
+  `localizacion_id` int DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_departamentos_localizaciones_localizaciones` (`localizacion_id`),
+  KEY `FK_departamentos_localizaciones_departamentos` (`departamento_id`),
+  CONSTRAINT `FK_departamentos_localizaciones_departamentos` FOREIGN KEY (`departamento_id`) REFERENCES `departamentos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_departamentos_localizaciones_localizaciones` FOREIGN KEY (`localizacion_id`) REFERENCES `localizaciones` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci</sql_create_table>
+</table>
+<table name="procesos" view="colnames">
+<left>818</left>
+<top>59</top>
+<width>110</width>
+<height>180</height>
+<sql_create_table>CREATE TABLE `procesos` (
+  `id` int NOT NULL,
+  `codigo` varchar(255) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `version` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci</sql_create_table>
+</table>
+<table name="departamentos_areas" view="colnames">
+<left>416</left>
+<top>508</top>
+<width>143</width>
+<height>129</height>
+<sql_create_table>CREATE TABLE `departamentos_areas` (
+  `id` int NOT NULL,
+  `departamento_id` int DEFAULT NULL,
+  `area_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_departamentos_cargos_departamentos` (`departamento_id`),
+  KEY `FK_departamentos_areas_areas` (`area_id`),
+  CONSTRAINT `FK_departamentos_areas_areas` FOREIGN KEY (`area_id`) REFERENCES `areas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_departamentos_cargos_departamentos` FOREIGN KEY (`departamento_id`) REFERENCES `departamentos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci</sql_create_table>
+</table>
+<table name="roles" view="colnames">
+<left>29</left>
+<top>220</top>
+<width>91</width>
+<height>132</height>
+<sql_create_table>CREATE TABLE `roles` (
+  `id` int NOT NULL,
+  `tipo` int DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use Doctrine\DBAL\Driver\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,7 @@ use App\Http\Controllers\LoginController;
 
 
 //Ruta del Home
-Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('rol:webmaster')->name('home');
 
 //Ruta de Localizaciones
 Route::get('indexLocalizacion', [App\Http\Controllers\LocalizacionController::class, 'index'])->name('indexLocalizacion');
