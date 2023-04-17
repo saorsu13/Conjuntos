@@ -43,25 +43,26 @@
 <!-- Bootstrap Select -->
 <div class="col-12">
     <div class="card">
-        <h5 class="card-header">Agregar una Nueva Localizacion</h5>
+        <h5 class="card-header">Editar Localizacion</h5>
         <div class="card-body">
             <div class="row">
 
                 <form action="{{ route('actualizarLocalizacion',['id' => $localizacion->localizacion_id]) }}" method="POST" class="form-horizontal" role="form" id="bootstrap">
                 @method('PUT')
-                    <div class="col-sm-6">
+                    <div class="col-sm-6" style="margin-top: 10px;">
                         <label for="defaultFormControlInput" class="form-label">Nombre</label>
                         <input name="nombre" type="text" class="form-control" id="defaultFormControlInput" placeholder="{{$localizacion->nombre}}" aria-describedby="defaultFormControlHelp" />
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6" style="margin-top: 10px;">
                         <label for="defaultFormControlInput" class="form-label">Codigo</label>
                         <input name="codigo" type="text" class="form-control" id="defaultFormControlInput" placeholder="{{$localizacion -> codigo}}" aria-describedby="defaultFormControlHelp" />
                     </div>
-                    <div>
+                    <div class="col-sm-6" style="margin-top: 10px;">
                         <label for="selectpickerBasic" class="form-label">Descripcion</label>
                         <textarea name="descripcion" placeholder="{{$localizacion -> descripcion}}" rows="2" cols="50" class="form-control"></textarea>
                     </div>
-                    <button class="btn btn-success">Actualizar</button>
+                    <button class="btn btn-success" style="margin-top: 15px;">Actualizar</button>
+                    <a class="btn btn-danger" style="margin-top: 15px;" href="{{ route('indexLocalizacion')}}">Cancelar</a>
                 </form>
             </div>
         </div>

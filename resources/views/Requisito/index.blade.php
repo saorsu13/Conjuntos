@@ -13,7 +13,8 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="">Dashboard -> Requisitos </a>
-                <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="">
@@ -43,9 +44,9 @@
         <br />
 
         <!-- Column Search -->
-        <div class="card">
+        <div class="card" style="margin-top: 15px;margin-left: 20px;margin-right: 20px;">
             <h5 class="card-header">Listado de Requisitos</h5>
-            <div class="card-datatable text-nowrap">
+            <div class="card-datatable">
                 <table class="dt-column-search table table-bordered">
                     <thead>
                         <tr>

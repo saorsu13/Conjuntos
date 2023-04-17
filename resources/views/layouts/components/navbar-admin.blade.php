@@ -454,7 +454,7 @@
                             <div class="dropdown-divider"></div>
                         </li>
                         <li>
-                            <a method="POST" class="dropdown-item" href="">
+                            <a method="POST" class="dropdown-item" href="{{route('logout')}}">
                                 @csrf
                                 <i class="bx bx-power-off me-2"></i>
                                 <span class="align-middle">Cerrar Sesion</span>

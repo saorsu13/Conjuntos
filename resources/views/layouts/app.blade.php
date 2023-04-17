@@ -118,8 +118,6 @@
     <script src="{{ asset('assets/js/tables-datatables-advanced.js') }}"></script>
     @yield('script-page')
 
-
-
     <!-- Flat Picker -->
     <script src="{{ asset('assets/vendor/libs/moment/moment.js') }}"></script>
     <script src="{{ asset('assets/vendor/libs/flatpickr/flatpickr.js') }}"></script>

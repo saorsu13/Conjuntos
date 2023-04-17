@@ -43,70 +43,70 @@
 <!-- Bootstrap Select -->
 <div class="col-12">
     <div class="card">
-        <h5 class="card-header">Bootstrap Select</h5>
+        <h5 class="card-header">Editar Usuario</h5>
         <div class="card-body">
             <div class="row">
 
                 <form action="{{ route('agregarUsuario') }}" method="POST" class="form-horizontal" role="form" id="bootstrap">
 
-                    <div class="form-check col-sm-6">
+                    <div class="form-check col-sm-6" style="margin-top: 10px;">
                         <input name="activo" class="form-check-input" type="checkbox" id="defaultCheck1">
                         <label class="form-check-label" for="defaultCheck1">
                             Activo
                         </label>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6" style="margin-top: 10px;">
                         <label for="defaultFormControlInput" class="form-label">Nombre</label>
                         <input name="nombre" type="text" class="form-control" id="defaultFormControlInput" placeholder="{{$usuario -> nombre}}" aria-describedby="defaultFormControlHelp" />
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6" style="margin-top: 10px;">
                         <label for="defaultFormControlInput" class="form-label">Correo Electronico</label>
                         <input name="email" type="text" class="form-control" id="defaultFormControlInput" placeholder="{{$usuario -> email}}" aria-describedby="defaultFormControlHelp" />
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6" style="margin-top: 10px;">
                         <label for="defaultFormControlInput" class="form-label">Contraseña</label>
-                        <input name="password" type="text" class="form-control" id="defaultFormControlInput" placeholder="{{$usuario -> password}}" aria-describedby="defaultFormControlHelp" />
+                        <input name="password" type="text" class="form-control" id="defaultFormControlInput" placeholder="" aria-describedby="defaultFormControlHelp" />
                     </div>
-                    <div class="col-sm-6">
-                    <label for="selectpickerBasic" class="form-label">Rol</label>
-                    <select name="rol" id="selectpickerBasic" class="selectpicker w-100" data-style="btn-default">
-                        <option>Usuario</option>
-                        <option>Invitado</option>
-                        <option>Administrador</option>
-                        <option>Webmaster</option>
-                    </select>
+                    <div class="col-sm-6" style="margin-top: 10px;">
+                        <label for="selectpickerBasic" class="form-label">Rol</label>
+                        <select name="rol" id="selectpickerBasic" class="selectpicker w-100" data-style="btn-default">
+                            <option>Usuario</option>
+                            <option>Invitado</option>
+                            <option>Administrador</option>
+                            <option>Webmaster</option>
+                        </select>
                     </div>
-                    <div class="col-sm-6">
-                    <label for="selectpickerBasic" class="form-label">Cargo</label>
-                    <select name="cargo" id="selectpickerBasic" class="selectpicker w-100" data-style="btn-default">
-                        <option >Auditor Interno</option>
-                        <option >Auxiliar Siso</option>
-                        <option >Coordinador de Calidad</option>
-                        <option >Coordinador(a) A</option>
-                        <option >Coordinador(a) AA</option>
-                        <option >Coordinador(a) AAA</option>
-                        <option >Coordinador(a) SGI</option>
-                        <option >Coordinador(a) SST</option>
-                        <option >Gerente Regional de Calidad</option>
-                        <option >profesional SST</option>
-                        <option >Siso</option>
-                        <option >Almacenista</option>
-                        <option >Plant Superintendent</option>
-                        <option >Plant Superintendent(C)</option>
-                        <option >Plant Superintendent(D)</option>
-                        <option >Analista de Informacion Comercial</option>
-                        <option >Ejecutiva Comercial</option>
-                        <option >Analista de Compras</option>
-                        <option >Auxiliar de Compras</option>
-                    </select>
+                    <div class="col-sm-6" style="margin-top: 10px;">
+                        <label for="selectpickerBasic" class="form-label">Cargo</label>
+                        <select name="cargo" id="selectpickerBasic" class="selectpicker w-100" data-style="btn-default">
+                            <option>Auditor Interno</option>
+                            <option>Auxiliar Siso</option>
+                            <option>Coordinador de Calidad</option>
+                            <option>Coordinador(a) A</option>
+                            <option>Coordinador(a) AA</option>
+                            <option>Coordinador(a) AAA</option>
+                            <option>Coordinador(a) SGI</option>
+                            <option>Coordinador(a) SST</option>
+                            <option>Gerente Regional de Calidad</option>
+                            <option>profesional SST</option>
+                            <option>Siso</option>
+                            <option>Almacenista</option>
+                            <option>Plant Superintendent</option>
+                            <option>Plant Superintendent(C)</option>
+                            <option>Plant Superintendent(D)</option>
+                            <option>Analista de Informacion Comercial</option>
+                            <option>Ejecutiva Comercial</option>
+                            <option>Analista de Compras</option>
+                            <option>Auxiliar de Compras</option>
+                        </select>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6" style="margin-top: 10px;">
                         <label for="defaultFormControlInput" class="form-label">Localizacion Usuario</label>
                         <input name="localizacionUsuario" type="text" class="form-control" id="defaultFormControlInput" placeholder="{{$usuario -> localizacion_usuario}}" aria-describedby="defaultFormControlHelp" />
                     </div>
 
-                    <button class="btn btn-success">Guardar</button>
-                    <button class="btn btn-danger">Eliminar</button>
+                    <button class="btn btn-success" style="margin-top: 15px;">Guardar</button>
+                    <a class="btn btn-danger" style="margin-top: 15px;" href="{{ route('indexUsuario')}}">Cancelar</a>
                 </form>
             </div>
         </div>

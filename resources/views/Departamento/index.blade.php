@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('page-title', 'Iso One - Home')
+@section('page-title', 'Iso One - Departamento')
 
 @section('page-content')
 
@@ -43,9 +43,9 @@
         <br />
 
         <!-- Column Search -->
-        <div class="card">
-            <h5 class="card-header">Listado de Cargos</h5>
-            <div class="card-datatable text-nowrap">
+        <div class="card" style="margin-top: 15px;margin-left: 20px;margin-right: 20px;">
+            <h5 class="card-header">Listado de Departamentos</h5>
+            <div class="card-datatable">
                 <table class="dt-column-search table table-bordered">
                     <thead>
                         <tr>

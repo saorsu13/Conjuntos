@@ -48,25 +48,26 @@
             <div class="row">
 
                 <form action="{{ route('actualizarDepartamento',['id' => $departamentos->departamentos_id]) }}" method="POST" class="form-horizontal" role="form" id="bootstrap">
-                @method('PUT')
-                    <div class="col-sm-6">
+                    @method('PUT')
+                    <div class="col-sm-6" style="margin-top: 10px;">
                         <label for="defaultFormControlInput" class="form-label">Nombre</label>
                         <input name="nombre" type="text" class="form-control" id="defaultFormControlInput" placeholder="{{$departamentos -> nombre}}" aria-describedby="defaultFormControlHelp" />
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6" style="margin-top: 10px;">
                         <label for="selectpickerBasic" class="form-label">Descripcion</label>
                         <textarea name="descripcion" placeholder="{{$departamentos -> descripcion}}" rows="2" cols="50" class="form-control"></textarea>
                     </div>
-                    <div class="col-md-6 mb-4">
-                        <label for="selectpickerMultiple" class="form-label">Listado de Localizaciones</label>
-                        <select name="Localizaciones_dptos[]" multiple id="selectpickerMultiple" class="selectpicker w-100" data-style="btn-default" multiple data-icon-base="bx" data-tick-icon="bx-check text-primary">
+                    <div class="col-md-6 mb-4" style="margin-top: 10px;">
+                        <label for="select2Multiple" class="form-label">Multiple</label>
+                        <select id="Localizaciones_dptos[]" class="select2 form-select" multiple>
                             @foreach($Localizaciones as $localizacion)
-                            <option>{{$localizacion -> nombre}}</option>
+                            <option selected="{{$departamentos -> localizacion_dptos}}">{{$localizacion -> nombre}}</option>
                             @endforeach
                         </select>
                     </div>
                     <button class="btn btn-success">Actualizar</button>
-                    <button class="btn btn-danger">Cancelar</button>
+                    <a class="btn btn-danger" href="{{ route('indexDepartamento')}}">Eliminar</a>
+
                 </form>
             </div>
         </div>
@@ -76,36 +77,30 @@
 <!-- /Bootstrap Select -->
 
 @endsection
-<!-- Core JS -->
-<!-- build:js assets/vendor/js/core.js -->
-<script src="{{ asset('assets/vendor/libs/jquery/jquery.js')}}"></script>
-<script src="{{ asset('assets/vendor/libs/popper/popper.js')}}"></script>
-<script src="{{ asset('assets/vendor/js/bootstrap.js') }}"></script>
-<script src="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
-<script src="{{ asset('assets/vendor/js/bootstrap.js') }}"></script>
 
-<script src="{{ asset('assets/vendor/libs/hammer/hammer.js')}}"></script>
+@section('script-core')
 
-<script src="{{ asset('assets/vendor/libs/i18n/i18n.js')}}"></script>
-<script src="{{ asset('assets/vendor/libs/typeahead-js/typeahead.js')}}"></script>
-
-<script src="{{ asset('assets/vendor/js/menu.js')}}"></script>
+@endsection
 <!-- endbuild -->
 
+@section('script-vendor')
 <!-- Vendors JS -->
 <script src="{{ asset('assets/vendor/libs/select2/select2.js')}}"></script>
 <script src="{{ asset('assets/vendor/libs/tagify/tagify.js')}}"></script>
 <script src="{{ asset('assets/vendor/libs/bootstrap-select/bootstrap-select.js')}}"></script>
 <script src="{{ asset('assets/vendor/libs/typeahead-js/typeahead.js')}}"></script>
 <script src="{{ asset('assets/vendor/libs/bloodhound/bloodhound.js')}}"></script>
+@endsection
+
 
 <!-- Main JS -->
-<script src="{{ asset('assets/js/main.js')}}"></script>
+@section('script-main')
+
+@endsection
 
 <!-- Page JS -->
+@section('script-page')
 <script src="{{ asset('assets/js/forms-selects.js')}}"></script>
 <script src="{{ asset('assets/js/forms-tagify.js')}}"></script>
 <script src="{{ asset('assets/js/forms-typeahead.js')}}"></script>
-
-
-<!-- build:js assets/vendor/js/core.js -->
+@endsection

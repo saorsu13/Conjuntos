@@ -49,25 +49,25 @@
 
                 <form action="{{ route('agregarUsuario') }}" method="POST" class="form-horizontal" role="form" id="bootstrap">
 
-                    <div class="form-check col-sm-6">
+                    <div class="form-check col-sm-6" style="margin-top: 10px;">
                         <input name="activo" class="form-check-input" type="checkbox" id="defaultCheck1">
                         <label class="form-check-label" for="defaultCheck1">
                             Activo
                         </label>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6" style="margin-top: 10px;">
                         <label for="defaultFormControlInput" class="form-label">Nombre</label>
                         <input name="nombre" type="text" class="form-control" id="defaultFormControlInput" placeholder="" aria-describedby="defaultFormControlHelp" />
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6" style="margin-top: 10px;">
                         <label for="defaultFormControlInput" class="form-label">Correo Electronico</label>
                         <input name="email" type="text" class="form-control" id="defaultFormControlInput" placeholder="" aria-describedby="defaultFormControlHelp" />
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6" style="margin-top: 10px;">
                         <label for="defaultFormControlInput" class="form-label">Contraseña</label>
                         <input name="password" type="text" class="form-control" id="defaultFormControlInput" placeholder="" aria-describedby="defaultFormControlHelp" />
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6" style="margin-top: 10px;">
                     <label for="selectpickerBasic" class="form-label">Rol</label>
                     <select name="rol" id="selectpickerBasic" class="selectpicker w-100" data-style="btn-default">
                         <option>Usuario</option>
@@ -76,7 +76,7 @@
                         <option>webmaster</option>
                     </select>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6" style="margin-top: 10px;">
                     <label for="selectpickerBasic" class="form-label">Cargo</label>
                     <select name="cargo" id="selectpickerBasic" class="selectpicker w-100" data-style="btn-default">
                         @foreach($cargos as $cargo)
@@ -84,7 +84,7 @@
                          @endforeach
                     </select>
                     </div>
-                    <div class="col-md-6 mb-4">
+                    <div class="col-md-6 mb-4" style="margin-top: 10px;">
                         <label for="selectpickerMultiple" class="form-label">Localizacion Usuario</label>
                         <select name="Localizacion_usuario" multiple id="selectpickerMultiple" class="selectpicker w-100" data-style="btn-default" multiple data-icon-base="bx" data-tick-icon="bx-check text-primary">
                             @foreach($Localizaciones as $localizacion)
@@ -94,7 +94,7 @@
                     </div>
 
                     <button class="btn btn-success">Guardar</button>
-                    <button class="btn btn-danger">Eliminar</button>
+                    <a class="btn btn-danger" href="{{ route('indexUsuario')}}">Cancelar</a>
                 </form>
             </div>
         </div>

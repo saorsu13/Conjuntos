@@ -48,18 +48,18 @@
                 <div class="row">
 
                     <form action="{{ route('agregarProceso') }}" method="POST" class="form-horizontal" role="form" id="bootstrap">
-                        <div class="col-sm-6">
+                        <div class="col-sm-6" style="margin-top: 10px;">
                             <label for="defaultFormControlInput" class="form-label">Codigo</label>
-                            <input name="codigo" type="text" class="form-control" id="defaultFormControlInput" placeholder="John Doe" aria-describedby="defaultFormControlHelp" />
+                            <input name="codigo" type="text" class="form-control" id="defaultFormControlInput" aria-describedby="defaultFormControlHelp" />
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-6" style="margin-top: 10px;">
                             <label for="defaultFormControlInput" class="form-label">Nombre</label>
-                            <input name="nombre" type="text" class="form-control" id="defaultFormControlInput" placeholder="John Doe" aria-describedby="defaultFormControlHelp" />
+                            <input name="nombre" type="text" class="form-control" id="defaultFormControlInput" aria-describedby="defaultFormControlHelp" />
                         </div>
                        
                        
-                        <button class="btn btn-success">Guardar</button>
-                        <button class="btn btn-danger">Cancelar</button>
+                        <button class="btn btn-success" style="margin-top: 15px;">Guardar</button>
+                        <a class="btn btn-danger" style="margin-top: 15px;" href="{{ route('indexProceso')}}">Cancelar</a>
                     </form>
                 </div>
             </div>

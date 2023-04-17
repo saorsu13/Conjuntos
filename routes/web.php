@@ -16,6 +16,11 @@ use Doctrine\DBAL\Driver\Middleware;
 */
 
 
+//Rutas inicio de sesion
+Route::get('/',[App\Http\Controllers\SecurityController::class,'index'])->name('login');
+Route::post('login',[App\Http\Controllers\SecurityController::class,'login'])->name('verifyLogin');
+Route::get('/logout', [\App\Http\Controllers\SecurityController::class,'logout'])->name('logout');
+
 //Ruta del Home
 Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('rol:webmaster')->name('home');
 
@@ -79,7 +84,3 @@ Route::delete('eliminarDocumento',[App\Http\Controllers\DocumentoController::cla
 // Route::get('usuarios', [App\Http\Controllers\UserController::class, 'index'])->name('usuarios');
 
 
-//Rutas inicio de sesion
-Route::get('/',[App\Http\Controllers\SecurityController::class,'index'])->name('login');
-Route::post('login',[App\Http\Controllers\SecurityController::class,'login'])->name('verifyLogin');
-Route::get('/logout', [\App\Http\Controllers\SecurityController::class,'logout'])->name('logout');
