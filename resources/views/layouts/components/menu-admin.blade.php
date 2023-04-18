@@ -107,7 +107,7 @@
                     </a>
                     <ul class="menu-sub">
                         <li class="menu-item">
-                            <a href="{{ route('crearDocumento')}}" class="menu-link">
+                            <a href="{{ route('indexDocumentoProcesar')}}" class="menu-link">
                                 <div data-i18n="Procesamiento">Procesamiento</div>
                             </a>
                         </li>
@@ -129,7 +129,7 @@
                             </a>
                         </li>
                         <li class="menu-item">
-                            <a href="layouts-collapsed-menu.html" class="menu-link">
+                            <a href="{{ route('indexTipoDocumento')}}" class="menu-link">
                                 <div data-i18n="Tipos de Documentos">Tipos de Documentos</div>
                             </a>
                         </li>

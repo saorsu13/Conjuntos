@@ -30,7 +30,7 @@ use Illuminate\Database\Eloquent\Model;
 class Departamento extends Model
 {
 	protected $table = 'departamentos';
-	protected $primaryKey = 'departamentos_id';
+	protected $primaryKey = 'departamento_id';
 
 	protected $casts = [
 		'localizacion_id' => 'int'

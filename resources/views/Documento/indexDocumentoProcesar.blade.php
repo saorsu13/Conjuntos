@@ -18,13 +18,13 @@
                 </button>
 
                 <div class="">
-                    <a class="btn btn-primary" href="{{ route('crearDepartamento')}}" role="button" title="Agregar Nuevo Cargo">
+                    <a class="btn btn-primary" href="{{ route('crearDocumento')}}" role="button" title="Agregar Nuevo Documento">
                         <i class="fas fa-puzzle-piece"></i>
                     </a>
-                    <a class="btn btn-primary" href="{{route('indexDepartamento')}}" role="button" title="Recargar Tabla">
+                    <a class="btn btn-primary" href="{{ route('indexDepartamento')}}" role="button" title="Recargar Tabla">
                         <i class="fa fa-refresh"></i>
                     </a>
-                    <a class="btn btn-primary" href="home" role="button" title="Editar Usuario">
+                    <a class="btn btn-primary" href="{{ route('editarDocumentoHtml')}}" role="button" title="Editar documento">
                         <i class="fas fa-cloud-download"></i>
                     </a>
                     <a class="btn btn-primary" href="home" role="button" title="Eliminar Usuario">
@@ -40,7 +40,6 @@
             </div>
 
         </nav>
-        <br />
 
         <!-- Column Search -->
         <div class="card" style="margin-top: 15px;margin-left: 20px;margin-right: 20px;">
@@ -49,31 +48,22 @@
                 <table class="dt-column-search table table-bordered">
                     <thead>
                         <tr>
-                            <th>N°</th>
+                            <th>Codigo</th>
                             <th>Nombres</th>
-                            <th>Descripcion</th>
-                            <th>Localizacion</th>
-                            <th>Acciones</th>
+                            <th>Version</th>
+                            <th>Proceso</th>
+                            <th>Tipo Documento</th>
+                            <th>Responsable</th>
+                            <th>Viene de</th>
+                            <th>Estado</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($departamentos as $departamento)
+                        @foreach($documentos as $documento)
                         <tr>
-                            <th>{{$departamento -> departamento_id}}</th>
-                            <th>{{$departamento -> nombre}}</th>
-                            <th>{{$departamento -> descripcion}}</th>
-                            <th>{{$departamento -> Localizaciones_dptos}}</th>
-                            <th>
-                            <form action="{{ route('editarDepartamento',['id' => $departamento->departamento_id]) }}" method="POST" class="form-horizontal" role="form" id="bootstrap">
-                                    @method('POST')
-                                    <button class="btn btn-success edit-button">Editar</button>
-                                    </form>
-                                    <br>
-                                    <form action="{{ route('eliminarDepartamento', $departamento->departamento_id) }}" method="POST">
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Eliminar</button>
-                                    </form>
-                            </th>
+                            <th>{{$documento -> codigo}}</th>
+                            <th>{{$documento -> nombre}}</th>
+                            <th>{{$documento -> version}}</th>
                         </tr>
                         @endforeach
                     </tbody>

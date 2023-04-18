@@ -74,11 +74,22 @@ Route::delete('eliminarRequisito/{id}',[App\Http\Controllers\RequisitoController
 
 //Rutas de Documentos
 Route::get('indexDocumento', [App\Http\Controllers\DocumentoController::class, 'index'])->name('indexDocumento');
+Route::get('indexDocumentoProcesar',[App\Http\Controllers\DocumentoController::class,'indexDocumentoProcesar'])->name('indexDocumentoProcesar');
 Route::get('crearDocumento',[App\Http\Controllers\DocumentoController::class, 'vistaCrearDocumento'])->name('crearDocumento');
+Route::get('editarDocumentoHtml',[App\Http\Controllers\DocumentoController::class,'editarDocumentoHtml'])->name('editarDocumentoHtml');
 Route::post('agregarDocumento',[App\Http\Controllers\DocumentoController::class,'agregarDocumento'])->name('agregarDocumento');
 Route::post('editarDocumento',[App\Http\Controllers\DocumentoController::class,'editarDocumento'])->name('editarDocumento');
 Route::put('actualizarDocumento',[App\Http\Controllers\DocumentoController::class,'actualizarDocumento'])->name('actualizarDocumento');
 Route::delete('eliminarDocumento',[App\Http\Controllers\DocumentoController::class,'eliminarDocumento'])->name('eliminarDocumento');
+
+//Rutas de Tipo Documentos
+Route::get('indexTipoDocumento',[\App\Http\Controllers\TipoDocumentoController::class,'index'])->name('indexTipoDocumento');
+Route::get('crearTipoDocumento',[\App\Http\Controllers\TipoDocumentoController::class,'vistaCrearTipoDocumento'])->name('crearTipoDocumento');
+Route::post('agregarTipoDocumento',[\App\Http\Controllers\TipoDocumentoController::class,'agregarTipoDocumento'])->name('agregarTipoDocumento');
+Route::post('editarTipoDocumento/{id}',[\App\Http\Controllers\TipoDocumentoController::class,'editarTipoDocumento'])->name('editarTipoDocumento');
+Route::put('actualizarTipoDocumento/{id}',[\App\Http\Controllers\TipoDocumentoController::class,'actualizarTipoDocumento'])->name('actualizarTipoDocumento');
+Route::delete('eliminarTipoDocumento/{id}',[\App\Http\Controllers\TipoDocumentoController::class,'eliminarTipoDocumento'])->name('eliminarTipoDocumento');
+
 
 //Rutas de Admin
 // Route::get('usuarios', [App\Http\Controllers\UserController::class, 'index'])->name('usuarios');
