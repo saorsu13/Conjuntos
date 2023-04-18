@@ -42,10 +42,9 @@ class DepartamentoController extends Controller
     }
     public function actualizarDepartamento(Request $request, $id)
     {
-        $departamento = Departamento::find($id);
+        $departamento = new Departamento();
         $departamento->nombre = $request->nombre;
         $departamento->descripcion = $request->descripcion;
-
         if ($request->has('Localizaciones_dptos')) 
         {
             $LocalizacionesSeleccionadas = $request->input('Localizaciones_dptos');

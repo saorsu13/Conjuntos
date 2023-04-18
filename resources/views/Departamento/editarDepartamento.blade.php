@@ -47,7 +47,7 @@
         <div class="card-body">
             <div class="row">
 
-                <form action="{{ route('actualizarDepartamento',['id' => $departamentos->departamentos_id]) }}" method="POST" class="form-horizontal" role="form" id="bootstrap">
+                <form action="{{ route('actualizarDepartamento',['id' => $departamentos->departamento_id]) }}" method="POST" class="form-horizontal" role="form" id="bootstrap">
                     @method('PUT')
                     <div class="col-sm-6" style="margin-top: 10px;">
                         <label for="defaultFormControlInput" class="form-label">Nombre</label>
