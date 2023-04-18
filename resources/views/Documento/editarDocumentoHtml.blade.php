@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('page-title', 'Iso One - Documentos')
-
+    <link rel="stylesheet" href="{{ asset('assets/vendor/libs/quill/typography.css')}}" />
+    <link rel="stylesheet" href="{{ asset('assets/vendor/libs/quill/katex.css')}}" />
+    <link rel="stylesheet" href="{{ asset('assets/vendor/libs/quill/editor.css')}}" />
 @section('page-content')
 
 <div class="container-xxl flex-grow-1 container-p-y">
@@ -36,16 +38,13 @@
         <div>
             <div class="col-12">
                 <button class="btn  btn-primary" style="margin-top: 15px;margin-left: 20px;margin-right: 10px;" href="home" role="button" title="Listado Maestro">
-                    Documentos por PROCESAR
+                    Forzar Soporte
                 </button>
-                <button class="btn  btn-primary" style="margin-top: 15px;margin-right: 10px" href="home" role="button" title="Listado Maestro">
-                    Documentos por EDITAR
+                <button class="btn  btn-danger" style="margin-top: 15px;margin-right: 10px" href="home" role="button" title="Listado Maestro">
+                    Forzar Publicacion
                 </button>
-                <button class="btn  btn-primary" style="margin-top: 15px;margin-right: 10px" href="home" role="button" title="Listado Maestro">
-                    Documentos por REVISAR
-                </button>
-                <button class="btn  btn-primary" style="margin-top: 15px;margin-right: 10px" href="home" role="button" title="Listado Maestro">
-                    Documentos por APROBAR
+                <button class="btn  btn-success" style="margin-top: 15px;margin-right: 10px" href="home" role="button" title="Listado Maestro">
+                    Enviar a Editar
                 </button>
 
                 <!-- Full Editor -->
@@ -75,11 +74,6 @@
     <!-- Vendors JS -->
     <script src="{{ asset('assets/vendor/libs/quill/katex.js')}}"></script>
     <script src="{{ asset('assets/vendor/libs/quill/quill.js')}}"></script>
-    <script src="{{ asset('assets/vendor/libs/select2/select2.js')}}"></script>
-    <script src="{{ asset('assets/vendor/libs/tagify/tagify.js')}}"></script>
-    <script src="{{ asset('assets/vendor/libs/bootstrap-select/bootstrap-select.js')}}"></script>
-    <script src="{{ asset('assets/vendor/libs/typeahead-js/typeahead.js')}}"></script>
-    <script src="{{ asset('assets/vendor/libs/bloodhound/bloodhound.js')}}"></script>
     @endsection
 
     @section('script-main')

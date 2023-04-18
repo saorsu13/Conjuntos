@@ -116,6 +116,7 @@
     <!-- Page JS -->
     <script src="{{ asset('assets/js/dashboards-analytics.js') }}"></script>
     <script src="{{ asset('assets/js/tables-datatables-advanced.js') }}"></script>
+
     @yield('script-page')
 
     <!-- Flat Picker -->
