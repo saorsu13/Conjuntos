@@ -60,7 +60,36 @@
                 </li>
             </ul>
         </li>
-
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon fas fa-tachometer-alt-average"></i>
+                <div data-i18n="Conjunto">Conjunto</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item active">
+                    <a href="{{ route ('indexConjunto') }}" class="menu-link">
+                        <i class="menu-icon fas fa-tachometer-alt"></i>
+                        <div data-i18n="Conjunto index">Conjunto index</div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="menu-sub">
+                <li class="menu-item active">
+                    <a href="" class="menu-link">
+                        <i class="menu-icon fas fa-tachometer-alt"></i>
+                        <div data-i18n="Casas">Casas</div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="menu-sub">
+                <li class="menu-item active">
+                    <a href="" class="menu-link">
+                        <i class="menu-icon fas fa-tachometer-alt"></i>
+                        <div data-i18n="Edificios">Edificios</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
         <!-- Planning -->
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">

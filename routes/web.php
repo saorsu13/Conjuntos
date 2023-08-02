@@ -83,14 +83,15 @@ Route::put('actualizarDocumento',[App\Http\Controllers\DocumentoController::clas
 Route::delete('eliminarDocumento',[App\Http\Controllers\DocumentoController::class,'eliminarDocumento'])->name('eliminarDocumento');
 
 //Rutas de Tipo Documentos
-Route::get('indexTipoDocumento',[\App\Http\Controllers\TipoDocumentoController::class,'index'])->name('indexTipoDocumento');
-Route::get('crearTipoDocumento',[\App\Http\Controllers\TipoDocumentoController::class,'vistaCrearTipoDocumento'])->name('crearTipoDocumento');
-Route::post('agregarTipoDocumento',[\App\Http\Controllers\TipoDocumentoController::class,'agregarTipoDocumento'])->name('agregarTipoDocumento');
-Route::post('editarTipoDocumento/{id}',[\App\Http\Controllers\TipoDocumentoController::class,'editarTipoDocumento'])->name('editarTipoDocumento');
-Route::put('actualizarTipoDocumento/{id}',[\App\Http\Controllers\TipoDocumentoController::class,'actualizarTipoDocumento'])->name('actualizarTipoDocumento');
-Route::delete('eliminarTipoDocumento/{id}',[\App\Http\Controllers\TipoDocumentoController::class,'eliminarTipoDocumento'])->name('eliminarTipoDocumento');
+Route::get('indexTipoDocumento',[App\Http\Controllers\TipoDocumentoController::class,'index'])->name('indexTipoDocumento');
+Route::get('crearTipoDocumento',[App\Http\Controllers\TipoDocumentoController::class,'vistaCrearTipoDocumento'])->name('crearTipoDocumento');
+Route::post('agregarTipoDocumento',[App\Http\Controllers\TipoDocumentoController::class,'agregarTipoDocumento'])->name('agregarTipoDocumento');
+Route::post('editarTipoDocumento/{id}',[App\Http\Controllers\TipoDocumentoController::class,'editarTipoDocumento'])->name('editarTipoDocumento');
+Route::put('actualizarTipoDocumento/{id}',[App\Http\Controllers\TipoDocumentoController::class,'actualizarTipoDocumento'])->name('actualizarTipoDocumento');
+Route::delete('eliminarTipoDocumento/{id}',[App\Http\Controllers\TipoDocumentoController::class,'eliminarTipoDocumento'])->name('eliminarTipoDocumento');
 
-
+//Rutas de Conjunto
+Route::get('indexConjunto',[App\Http\Controllers\ConjuntoController::class,'index'])->name('indexConjunto');
 //Rutas de Admin
 // Route::get('usuarios', [App\Http\Controllers\UserController::class, 'index'])->name('usuarios');
 
