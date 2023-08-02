@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Departamento
  * 
- * @property int $departamentos_id
+ * @property int $departamento_id
  * @property int|null $localizacion_id
  * @property string $nombre
  * @property string $descripcion

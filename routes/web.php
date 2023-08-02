@@ -1,7 +1,14 @@
 <?php
 
+use App\Http\Controllers\ApartamentoController;
+use App\Http\Controllers\CasaController;
+use App\Http\Controllers\EdificioController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MascotaController;
+use App\Http\Controllers\PaqueaderoController;
+use App\Http\Controllers\PersonaController;
+use App\Http\Controllers\VehiculoController;
 use Doctrine\DBAL\Driver\Middleware;
 
 /*
@@ -90,9 +97,59 @@ Route::post('editarTipoDocumento/{id}',[App\Http\Controllers\TipoDocumentoContro
 Route::put('actualizarTipoDocumento/{id}',[App\Http\Controllers\TipoDocumentoController::class,'actualizarTipoDocumento'])->name('actualizarTipoDocumento');
 Route::delete('eliminarTipoDocumento/{id}',[App\Http\Controllers\TipoDocumentoController::class,'eliminarTipoDocumento'])->name('eliminarTipoDocumento');
 
-//Rutas de Conjunto
-Route::get('indexConjunto',[App\Http\Controllers\ConjuntoController::class,'index'])->name('indexConjunto');
-//Rutas de Admin
-// Route::get('usuarios', [App\Http\Controllers\UserController::class, 'index'])->name('usuarios');
+// Rutas para el controlador ApartamentoController
+Route::get('indexApartamento', [ApartamentoController::class, 'index'])->name('indexApartamento');
+Route::get('crearApartamento', [ApartamentoController::class, 'vistaCrearApartamento'])->name('crearApartamento');
+Route::post('agregarApartamento', [ApartamentoController::class, 'agregarApartamento'])->name('agregarApartamento');
+Route::get('editarApartamento/{id}', [ApartamentoController::class, 'editarApartamento'])->name('editarApartamento');
+Route::put('actualizarApartamento/{id}', [ApartamentoController::class, 'actualizarApartamento'])->name('actualizarApartamento');
+Route::delete('eliminarApartamento/{id}', [ApartamentoController::class, 'eliminarApartamento'])->name('eliminarApartamento');
 
+// Rutas para el controlador CasaController
+Route::get('indexCasa', [CasaController::class, 'index'])->name('indexCasa');
+Route::get('crearCasa', [CasaController::class, 'vistaCrearCasa'])->name('crearCasa');
+Route::post('agregarCasa', [CasaController::class, 'agregarCasa'])->name('agregarCasa');
+Route::get('editarCasa/{id}', [CasaController::class, 'editarCasa'])->name('editarCasa');
+Route::put('actualizarCasa/{id}', [CasaController::class, 'actualizarCasa'])->name('actualizarCasa');
+Route::delete('eliminarCasa/{id}', [CasaController::class, 'eliminarCasa'])->name('eliminarCasa');
+
+// Rutas para el controlador EdificioController
+Route::get('indexEdificio', [EdificioController::class, 'index'])->name('indexEdificio');
+Route::get('crearEdificio', [EdificioController::class, 'vistaCrearEdificio'])->name('crearEdificio');
+Route::post('agregarEdificio', [EdificioController::class, 'agregarEdificio'])->name('agregarEdificio');
+Route::get('editarEdificio/{id}', [EdificioController::class, 'editarEdificio'])->name('editarEdificio');
+Route::put('actualizarEdificio/{id}', [EdificioController::class, 'actualizarEdificio'])->name('actualizarEdificio');
+Route::delete('eliminarEdificio/{id}', [EdificioController::class, 'eliminarEdificio'])->name('eliminarEdificio');
+
+// Rutas para el controlador MascotaController
+Route::get('indexMascota', [MascotaController::class, 'index'])->name('indexMascota');
+Route::get('crearMascota', [MascotaController::class, 'vistaCrearMascota'])->name('crearMascota');
+Route::post('agregarMascota', [MascotaController::class, 'agregarMascota'])->name('agregarMascota');
+Route::get('editarMascota/{id}', [MascotaController::class, 'editarMascota'])->name('editarMascota');
+Route::put('actualizarMascota/{id}', [MascotaController::class, 'actualizarMascota'])->name('actualizarMascota');
+Route::delete('eliminarMascota/{id}', [MascotaController::class, 'eliminarMascota'])->name('eliminarMascota');
+
+// Rutas para el controlador PersonaController
+Route::get('indexPersona', [PersonaController::class, 'index'])->name('indexPersona');
+Route::get('crearPersona', [PersonaController::class, 'vistaCrearPersona'])->name('crearPersona');
+Route::post('agregarPersona', [PersonaController::class, 'agregarPersona'])->name('agregarPersona');
+Route::get('editarPersona/{id}', [PersonaController::class, 'editarPersona'])->name('editarPersona');
+Route::put('actualizarPersona/{id}', [PersonaController::class, 'actualizarPersona'])->name('actualizarPersona');
+Route::delete('eliminarPersona/{id}', [PersonaController::class, 'eliminarPersona'])->name('eliminarPersona');
+
+// Rutas para el controlador PaqueaderoController
+Route::get('indexPaqueadero', [PaqueaderoController::class, 'index'])->name('indexPaqueadero');
+Route::get('crearPaqueadero', [PaqueaderoController::class, 'vistaCrearPaqueadero'])->name('crearPaqueadero');
+Route::post('agregarPaqueadero', [PaqueaderoController::class, 'agregarPaqueadero'])->name('agregarPaqueadero');
+Route::get('editarPaqueadero/{id}', [PaqueaderoController::class, 'editarPaqueadero'])->name('editarPaqueadero');
+Route::put('actualizarPaqueadero/{id}', [PaqueaderoController::class, 'actualizarPaqueadero'])->name('actualizarPaqueadero');
+Route::delete('eliminarPaqueadero/{id}', [PaqueaderoController::class, 'eliminarPaqueadero'])->name('eliminarPaqueadero');
+
+// Rutas para el controlador VehiculoController
+Route::get('indexVehiculo', [VehiculoController::class, 'index'])->name('indexVehiculo');
+Route::get('crearVehiculo', [VehiculoController::class, 'vistaCrearVehiculo'])->name('crearVehiculo');
+Route::post('agregarVehiculo', [VehiculoController::class, 'agregarVehiculo'])->name('agregarVehiculo');
+Route::get('editarVehiculo/{id}', [VehiculoController::class, 'editarVehiculo'])->name('editarVehiculo');
+Route::put('actualizarVehiculo/{id}', [VehiculoController::class, 'actualizarVehiculo'])->name('actualizarVehiculo');
+Route::delete('eliminarVehiculo/{id}', [VehiculoController::class, 'eliminarVehiculo'])->name('eliminarVehiculo');
 

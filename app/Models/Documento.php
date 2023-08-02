@@ -71,9 +71,9 @@ class Documento extends Model
 		return $this->belongsTo(Departamento::class);
 	}
 
-	public function localizacion()
+	public function localizacione()
 	{
-		return $this->belongsTo(Localizacion::class, 'localizacion_id');
+		return $this->belongsTo(Localizacione::class, 'localizacion_id');
 	}
 
 	public function proceso()
