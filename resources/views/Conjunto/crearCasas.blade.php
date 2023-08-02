@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('page-title', 'Iso One - Home')
+@section('page-title', 'Crear Casa - Iso One')
 
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon/favicon.ico')}}" />
@@ -38,41 +38,44 @@
 <script src="{{ asset('assets/vendor/js/template-customizer.js')}}"></script>
 <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
 <script src="{{ asset('assets/js/config.js')}}"></script>
+
 @section('page-content')
-
-<!-- Bootstrap Select -->
-<div class="col-12">
-    <div class="card">
-        <h5 class="card-header">Agregar una Nueva Localizacion</h5>
-        <div class="card-body">
-            <div class="row">
-
-                <form action="{{ route('agregarLocalizacion') }}" method="POST" class="form-horizontal" role="form" id="bootstrap">
-
-                    <div class="col-sm-6" style="margin-top: 10px;">
-                        <label for="defaultFormControlInput" class="form-label">Nombre</label>
-                        <input name="nombre" type="text" class="form-control" id="defaultFormControlInput" placeholder="" aria-describedby="defaultFormControlHelp" />
-                    </div>
-                    <div class="col-sm-6" style="margin-top: 10px;">
-                        <label for="defaultFormControlInput" class="form-label">Codigo</label>
-                        <input name="codigo" type="text" class="form-control" id="defaultFormControlInput" placeholder="" aria-describedby="defaultFormControlHelp" />
-                    </div>
-                    <div class="col-sm-6" style="margin-top: 10px;">
-                        <label for="selectpickerBasic" class="form-label">Descripcion</label>
-                        <textarea name="descripcion" rows="2" cols="50" class="form-control"></textarea>
-                    </div>
-                    
-                    <button class="btn btn-success" style="margin-top: 15px;">Guardar</button>
-                    <a class="btn btn-danger" style="margin-top: 15px;" href="{{ route('indexLocalizacion')}}">Cancelar</a>
-                </form>
+<div class="container">
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Crear Casa</div>
+                <div class="card-body">
+                    <form action="{{ route('guardarCasa') }}" method="POST">
+                        @csrf
+                        <div class="form-group">
+                            <label for="numero_casa">Número de Casa</label>
+                            <input name="numero_casa" type="text" class="form-control" id="numero_casa" placeholder="" aria-describedby="numeroCasaHelp" />
+                        </div>
+                        <div class="form-group">
+                            <label for="descripcion">Descripción</label>
+                            <textarea name="descripcion" rows="2" class="form-control"></textarea>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" name="arrendado" id="arrendado" value="1" class="form-check-input">
+                            <label for="arrendado" class="form-check-label">Arrendado</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" name="en_venta" id="en_venta" value="1" class="form-check-input">
+                            <label for="en_venta" class="form-check-label">En Venta</label>
+                        </div>
+                        <div class="d-flex justify-content-end mt-3">
+                            <button class="btn btn-sm btn-success mr-2">Guardar</button>
+                            <a class="btn btn-sm btn-danger" href="{{ route('indexCasas')}}">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
-<!-- /Bootstrap Select -->
-
 @endsection
+
 <!-- Core JS -->
 <!-- build:js assets/vendor/js/core.js -->
 <script src="{{ asset('assets/vendor/libs/jquery/jquery.js')}}"></script>
