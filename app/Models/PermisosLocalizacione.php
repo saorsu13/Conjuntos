@@ -19,7 +19,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property Carbon|null $updated_at
  * 
  * @property Localizacione $localizacione
- * @property User $usuario
+ * @property Usuario $usuario
  *
  * @package App\Models
  */
@@ -45,6 +45,6 @@ class PermisosLocalizacione extends Model
 
 	public function usuario()
 	{
-		return $this->belongsTo(User::class);
+		return $this->belongsTo(Usuario::class);
 	}
 }
